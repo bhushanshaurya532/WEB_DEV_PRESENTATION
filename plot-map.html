@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm Plot Navigation</title>
+    <link rel="stylesheet" href="agro.css">
+</head>
+<body>
+    <nav class="nav-header">
+        <a href="registration.html" class="nav-link">Task 1: Registration</a>
+        <a href="advisory.html" class="nav-link">Task 2: Advisory</a>
+        <a href="irrigation-table.html" class="nav-link">Task 3: Data Table</a>
+        <a href="weather.html" class="nav-link">Task 4: Weather</a>
+        <a href="plot-map.html" class="nav-link active">Task 5: Plot Map</a>
+        <a href="farm-info.html" class="nav-link">Task 6: Farm Info</a>
+        <a href="gall.html" class="nav-link">Task 7: Gallery</a>
+        <a href="media.html" class="nav-link">Task 8: Media Center</a>
+    </nav>
+
+    <div class="container">
+        <h2>Interactive Farm Plot Navigation Map</h2>
+        <hr>
+        <div class="map-container">
+            <img src="https://www.gifcen.com/wp-content/uploads/2024/01/crop-gif-13.gif" alt="Farm Map" usemap="#myMap" width="600" height="400">
+        </div>
+
+        <map name="myMap">
+            <area shape="rect" coords="34,44,270,350" href="advisory.html" alt="Plot A Details">
+            <area shape="circle" coords="337,300,44" href="advisory.html" alt="Plot B Details">
+            <area shape="poly" coords="400,50,500,150,450,250,350,200" href="advisory.html" alt="Plot C Details">
+        </map>
+    </div>
+</body>
+</html>
