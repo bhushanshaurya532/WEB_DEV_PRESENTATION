@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soil &amp; Sensors — SUGARCANE360</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Top Utility Header -->
+  <div class="top-utility-bar">
+    <div class="top-utility-container">
+      <div class="top-utility-text">
+        Welcome To SugarMart & SUGARCANE360 e-Procurement Portal &nbsp;|&nbsp; 📞 Toll Free: +91-8956132095 (9.30 AM to 05.30 PM, Mon-Fri)
+      </div>
+      <div class="top-utility-actions">
+        <a href="registration.html" class="top-btn">Factory Registration</a>
+        <a href="registration.html" class="top-btn">Supplier Registration</a>
+        <a href="login.html" class="top-btn top-btn-solid">Login</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-link">
+        <span class="brand-box-logo">SUGARCANE360</span>
+      </a>
+      <button class="hamburger-btn" id="navToggleBtn" aria-label="Toggle Navigation">
+        ☰ MENU
+      </button>
+      <nav class="nav-links-menu" id="navLinksMenu">
+        <a href="index.html" class="nav-item-link">Home</a>
+        <a href="dashboard.html" class="nav-item-link">Dashboard</a>
+        <a href="plots.html" class="nav-item-link">My Plots</a>
+        <a href="advisory.html" class="nav-item-link">Advisory</a>
+        <a href="weather.html" class="nav-item-link">Weather</a>
+        <a href="sensors.html" class="nav-item-link active">Sensors</a>
+        <a href="crop-health.html" class="nav-item-link">Crop Health</a>
+        <a href="fertigation.html" class="nav-item-link">Fertigation</a>
+        <a href="analytics.html" class="nav-item-link">Analytics</a>
+        <a href="pump.html" class="nav-item-link">Pump Control</a>
+        <a href="alerts.html" class="nav-item-link">Alerts <span class="alert-dot-badge">2</span></a>
+        <a href="assistant.html" class="nav-item-link">AI Helpdesk</a>
+        <a href="registration.html" class="nav-item-link">Registration</a>
+        <a href="login.html" class="nav-item-link" style="background:#d9534f; color:#fff;">Logout</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Blue Header Banner -->
+  <div class="page-blue-banner">
+    <div class="banner-container">
+      <h1>SOIL &amp; SENSOR TELEMETRY LOGS</h1>
+      <p>Ground Truth Soil Moisture Telemetry Layer for IoT Irrigation Decision Support</p>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    
+    <div class="portal-layout-grid">
+
+      <!-- Left Sidebar Navigation Panel -->
+      <aside class="portal-sidebar">
+        <div class="portal-sidebar-title">TELEMETRY MENU</div>
+        <a href="sensors.html" class="sidebar-nav-btn active">Field Sensor Nodes</a>
+        <a href="advisory.html" class="sidebar-nav-btn">Plot Irrigation Advisory</a>
+        <a href="plots.html" class="sidebar-nav-btn">My Farm Plots</a>
+        <a href="pump.html" class="sidebar-nav-btn">Pump Remote Automation</a>
+      </aside>
+
+      <!-- Right Content Area -->
+      <section>
+
+        <!-- Simulated Notice Banner -->
+        <div class="card" style="border-left:5px solid #0056b3; background:#e6f0fa; margin-bottom:20px;">
+          <div style="font-size:0.95rem; color:#003366; line-height:1.5;">
+            <strong>Simulated Telemetry Notice:</strong> Telemetry updated <strong>10 minutes ago</strong>. This page displays real-time telemetry representing the IoT data acquisition layer of Case Study KJS-AGR-01. Physical IoT hardware nodes are modeled digitally.
+          </div>
+        </div>
+
+        <!-- 4 Primary Readings -->
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:14px; margin-bottom:20px;">
+          <div class="card card-sm">
+            <div style="font-size:0.85rem; font-weight:bold; color:#003366; text-transform:uppercase;">Plot A Soil Moisture</div>
+            <div class="status-stat-val">42%</div>
+            <div class="status-stat-sub">15cm &amp; 30cm depth averaged</div>
+          </div>
+
+          <div class="card card-sm">
+            <div style="font-size:0.85rem; font-weight:bold; color:#003366; text-transform:uppercase;">Soil Temperature</div>
+            <div class="status-stat-val">26.5°C</div>
+            <div class="status-stat-sub">Optimal microbial range</div>
+          </div>
+
+          <div class="card card-sm">
+            <div style="font-size:0.85rem; font-weight:bold; color:#003366; text-transform:uppercase;">Canopy Humidity</div>
+            <div class="status-stat-val">68%</div>
+            <div class="status-stat-sub">Transpiration bounds normal</div>
+          </div>
+
+          <div class="card card-sm">
+            <div style="font-size:0.85rem; font-weight:bold; color:#003366; text-transform:uppercase;">Main Line Flow</div>
+            <div class="status-stat-val">0.0 L/m</div>
+            <div class="status-stat-sub">Pumps Standby (Idle)</div>
+          </div>
+        </div>
+
+        <!-- Soil Moisture Trend Chart -->
+        <div class="card" style="margin-bottom:20px;">
+          <div class="card-title-row">
+            <div>
+              <h2 style="font-size:1.3rem; color:#003366;">
+                PLOT A SOIL MOISTURE TREND (24 HOURS)
+              </h2>
+            </div>
+            <span class="badge badge-good">Target: 50%–70%</span>
+          </div>
+          <div style="height:220px; position:relative;">
+            <canvas id="sensorMoistureTrendChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Sensor Fleet Status List -->
+        <div class="card">
+          <div class="card-title-row">
+            <div>
+              <h2 style="font-size:1.3rem; color:#003366;">
+                FIELD SENSOR NODES FLEET
+              </h2>
+            </div>
+            <span class="badge badge-info">Protocol: LoRaWAN / GSM</span>
+          </div>
+
+          <div id="sensorFleetList">
+            <!-- Rendered via script -->
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div style="max-width:1240px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+      <div><strong>SUGARCANE360</strong> &bull; Single e-Procurement B2B Platform & Irrigation System</div>
+      <div>Case Study: <em>KJS-AGR-01 &bull; Kolhapur, Maharashtra</em></div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const container = document.getElementById("sensorFleetList");
+      if (container && SUGARCANE_DATA.sensors && SUGARCANE_DATA.sensors.fleet) {
+        container.innerHTML = SUGARCANE_DATA.sensors.fleet.map(s => `
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 14px; border-bottom:1px solid #cccccc; font-size:0.95rem; flex-wrap:wrap; gap:8px;">
+            <div style="display:flex; align-items:center; gap:10px;">
+              <strong>${s.name}</strong>
+              <span style="font-size:0.85rem; color:#555555;">(${s.type})</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:14px;">
+              <span style="font-weight:bold; color:#003366;">${s.value}</span>
+              <span class="badge ${s.status === 'Online' ? 'badge-good' : s.status === 'Warning' ? 'badge-warn' : 'badge-danger'}">
+                ${s.status}
+              </span>
+            </div>
+          </div>
+        `).join("");
+      }
+
+      // Render Line Chart with sharp blue styling
+      const ctx = document.getElementById("sensorMoistureTrendChart");
+      if (ctx && typeof Chart !== "undefined") {
+        new Chart(ctx, {
+          type: "line",
+          data: {
+            labels: ["00:00", "04:00", "08:00", "12:00", "16:00", "20:00", "Now"],
+            datasets: [
+              {
+                label: "Plot A Moisture (%)",
+                data: [48, 47, 46, 44, 43, 42, 42],
+                borderColor: "#0056b3",
+                backgroundColor: "rgba(0, 86, 179, 0.1)",
+                fill: true,
+                tension: 0,
+                borderWidth: 3,
+                pointRadius: 5,
+                pointBackgroundColor: "#003366"
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { display: false }
+            },
+            scales: {
+              y: {
+                min: 30,
+                max: 60,
+                grid: { color: "#cccccc" },
+                ticks: { callback: v => v + "%" }
+              },
+              x: {
+                grid: { display: false }
+              }
+            }
+          }
+        });
+      }
+
+      if (typeof initIcons === 'function') initIcons();
+    });
+  </script>
+</body>
+</html>

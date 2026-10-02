@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farmer Dashboard — SUGARCANE360</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<link rel="stylesheet" href="dashboard.css">
+<link rel="stylesheet" href="style.css">
+<body>
+
+  <!-- Top Navigation -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="dashboard.html" class="brand-link">
+        <span class="brand-sprout">🌱</span>
+        <span>SUGARCANE360</span>
+      </a>
+      <button class="hamburger-btn" id="navToggleBtn" aria-label="Toggle Navigation">
+        <i data-lucide="menu"></i>
+      </button>
+      <nav class="nav-links-menu" id="navLinksMenu">
+        <a href="dashboard.html" class="nav-item-link active">Dashboard</a>
+        <a href="plots.html" class="nav-item-link">My Plots</a>
+        <a href="advisory.html" class="nav-item-link">Advisory</a>
+        <a href="weather.html" class="nav-item-link">Weather</a>
+        <a href="sensors.html" class="nav-item-link">Sensors</a>
+        <a href="crop-health.html" class="nav-item-link">Crop Health</a>
+        <a href="fertigation.html" class="nav-item-link">Fertigation</a>
+        <a href="analytics.html" class="nav-item-link">Analytics</a>
+        <a href="pump.html" class="nav-item-link">Pump</a>
+        <a href="alerts.html" class="nav-item-link">Alerts <span class="alert-dot-badge">2</span></a>
+        <a href="assistant.html" class="nav-item-link">AI Assistant</a>
+        <a href="registration.html" class="nav-item-link">Registration</a>
+        <a href="login.html" class="nav-item-link" style="color:var(--text-light); margin-left:8px;">Logout</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="main-content" style="max-width: 920px;">
+    <div class="dashboard-grid">
+
+      <!-- 1. Header + Farmer Greeting -->
+      <section class="dashboard-greeting-wrap">
+        <div style="font-size:0.75rem; font-weight:700; color:var(--sage); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:2px;">
+          Farmer Dashboard &bull; Case Study KJS-AGR-01
+        </div>
+        <h1 class="dashboard-greeting-title">Good morning, Ramesh 👋</h1>
+        <div class="dashboard-greeting-meta">
+          <i data-lucide="map-pin" style="width:13px; height:13px; color:var(--sage);"></i>
+          <span>Kolhapur, Maharashtra &bull; Total Land: 9.3 Acres (4 Plots)</span>
+        </div>
+      </section>
+
+      <!-- 2. Farm Overview with 4 Plots (Subtle Agricultural Layout) -->
+      <section class="farm-card">
+        <div class="farm-header-row">
+          <div>
+            <h2 class="farm-title">
+              <i data-lucide="map" style="width:17px; height:17px; color:var(--forest);"></i>
+              Farm Overview
+            </h2>
+          </div>
+          <span class="farm-hint">Click a plot to inspect</span>
+        </div>
+
+        <div class="farm-svg-box">
+          <svg class="farm-svg" viewBox="0 0 680 180" xmlns="http://www.w3.org/2000/svg" id="dashFarmSvg">
+            <!-- Subtle Farm Boundary -->
+            <rect x="0" y="0" width="680" height="180" rx="10" fill="#f7f5f0" stroke="#e8e4dc" stroke-width="1.5"/>
+            
+            <!-- Plot A (Top Left) -->
+            <g class="plot-cell" id="svg-plot-a" onclick="switchPlot('plot-a')">
+              <rect x="12" y="12" width="322" height="74" rx="7" fill="#edf3ee" stroke="#cadbce" stroke-width="1.5"/>
+              <text x="28" y="44" fill="#1b4332" font-size="15" font-weight="700">Plot A</text>
+              <text x="28" y="64" fill="#5d7566" font-size="12">2.4 Acres</text>
+              <text x="316" y="54" text-anchor="end" fill="#40916c" font-size="12" font-weight="600">Irrigate Tomorrow</text>
+            </g>
+
+            <!-- Plot B (Top Right) -->
+            <g class="plot-cell" id="svg-plot-b" onclick="switchPlot('plot-b')">
+              <rect x="346" y="12" width="322" height="74" rx="7" fill="#edf3ee" stroke="#cadbce" stroke-width="1.5"/>
+              <text x="362" y="44" fill="#1b4332" font-size="15" font-weight="700">Plot B</text>
+              <text x="362" y="64" fill="#5d7566" font-size="12">1.8 Acres</text>
+              <text x="650" y="54" text-anchor="end" fill="#40916c" font-size="12" font-weight="600">Optimal</text>
+            </g>
+
+            <!-- Plot C (Bottom Left) -->
+            <g class="plot-cell" id="svg-plot-c" onclick="switchPlot('plot-c')">
+              <rect x="12" y="94" width="322" height="74" rx="7" fill="#edf3ee" stroke="#cadbce" stroke-width="1.5"/>
+              <text x="28" y="126" fill="#1b4332" font-size="15" font-weight="700">Plot C</text>
+              <text x="28" y="146" fill="#5d7566" font-size="12">3.1 Acres</text>
+              <text x="316" y="136" text-anchor="end" fill="#b56b18" font-size="12" font-weight="600">Needs Water</text>
+            </g>
+
+            <!-- Plot D (Bottom Right) -->
+            <g class="plot-cell" id="svg-plot-d" onclick="switchPlot('plot-d')">
+              <rect x="346" y="94" width="322" height="74" rx="7" fill="#edf3ee" stroke="#cadbce" stroke-width="1.5"/>
+              <text x="362" y="126" fill="#1b4332" font-size="15" font-weight="700">Plot D</text>
+              <text x="362" y="146" fill="#5d7566" font-size="12">2.0 Acres</text>
+              <text x="650" y="136" text-anchor="end" fill="#52796f" font-size="12" font-weight="600">Moist</text>
+            </g>
+          </svg>
+        </div>
+      </section>
+
+      <!-- 3. Large but Compact Today's Irrigation Card -->
+      <section id="dashAdvisoryContainer">
+        <!-- Rendered via js/dashboard.js -->
+      </section>
+
+      <!-- 4. Three Small Status Cards -->
+      <section id="dashStatusContainer">
+        <!-- Rendered via js/dashboard.js -->
+      </section>
+
+      <!-- 5. Small Alerts Section -->
+      <section class="alerts-card">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+          <h2 class="alerts-title" style="margin:0;">
+            <i data-lucide="bell" style="width:16px; height:16px; color:var(--yellow);"></i>
+            Alerts
+          </h2>
+          <a href="alerts.html" style="font-size:0.82rem; font-weight:600; color:var(--forest);">View All Alerts &rarr;</a>
+        </div>
+        <div id="dashAlertsList">
+          <!-- Rendered via js/dashboard.js -->
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div style="max-width:920px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+      <div>
+        <strong>SUGARCANE360</strong> &bull; SY Computer Engineering Web Development Lab Mini Project
+      </div>
+      <div>
+        Case Study: <em>KJS-AGR-01 &bull; Kolhapur, Maharashtra</em>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

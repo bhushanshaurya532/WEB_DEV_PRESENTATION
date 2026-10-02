@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yield Analytics — SUGARCANE360</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Top Utility Header -->
+  <div class="top-utility-bar">
+    <div class="top-utility-container">
+      <div class="top-utility-text">
+        Welcome To SugarMart & SUGARCANE360 e-Procurement Portal &nbsp;|&nbsp; 📞 Toll Free: +91-8956132095 (9.30 AM to 05.30 PM, Mon-Fri)
+      </div>
+      <div class="top-utility-actions">
+        <a href="registration.html" class="top-btn">Factory Registration</a>
+        <a href="registration.html" class="top-btn">Supplier Registration</a>
+        <a href="login.html" class="top-btn top-btn-solid">Login</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-link">
+        <span class="brand-box-logo">SUGARCANE360</span>
+      </a>
+      <button class="hamburger-btn" id="navToggleBtn" aria-label="Toggle Navigation">
+        ☰ MENU
+      </button>
+      <nav class="nav-links-menu" id="navLinksMenu">
+        <a href="index.html" class="nav-item-link">Home</a>
+        <a href="dashboard.html" class="nav-item-link">Dashboard</a>
+        <a href="plots.html" class="nav-item-link">My Plots</a>
+        <a href="advisory.html" class="nav-item-link">Advisory</a>
+        <a href="weather.html" class="nav-item-link">Weather</a>
+        <a href="sensors.html" class="nav-item-link">Sensors</a>
+        <a href="crop-health.html" class="nav-item-link">Crop Health</a>
+        <a href="fertigation.html" class="nav-item-link">Fertigation</a>
+        <a href="analytics.html" class="nav-item-link active">Analytics</a>
+        <a href="pump.html" class="nav-item-link">Pump Control</a>
+        <a href="alerts.html" class="nav-item-link">Alerts <span class="alert-dot-badge">2</span></a>
+        <a href="assistant.html" class="nav-item-link">AI Helpdesk</a>
+        <a href="registration.html" class="nav-item-link">Registration</a>
+        <a href="login.html" class="nav-item-link" style="background:#d9534f; color:#fff;">Logout</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Blue Header Banner -->
+  <div class="page-blue-banner">
+    <div class="banner-container">
+      <h1>YIELD FORECASTING &amp; WATER IMPACT ANALYTICS</h1>
+      <p>AI-Driven Yield Estimation &amp; Water Conservation Metrics</p>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    
+    <div class="portal-layout-grid">
+
+      <!-- Left Sidebar Navigation Panel -->
+      <aside class="portal-sidebar">
+        <div class="portal-sidebar-title">ANALYTICS MENU</div>
+        <a href="analytics.html" class="sidebar-nav-btn active">Yield &amp; Water Impact</a>
+        <a href="sensors.html" class="sidebar-nav-btn">Soil Telemetry</a>
+        <a href="advisory.html" class="sidebar-nav-btn">Plot Irrigation Advisory</a>
+        <a href="dashboard.html" class="sidebar-nav-btn">Farmer Dashboard</a>
+      </aside>
+
+      <!-- Right Content Area -->
+      <section>
+
+        <!-- 2 Key Analytical Metric Cards -->
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:16px; margin-bottom:20px;">
+          <!-- Yield Prediction -->
+          <div class="card" style="border-left:5px solid #0056b3;">
+            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:4px;">
+              <span style="font-size:0.85rem; color:#003366; font-weight:bold; text-transform:uppercase;">
+                Predicted Harvest Yield
+              </span>
+              <span class="badge badge-good">High Confidence (92%)</span>
+            </div>
+            <div class="status-stat-val" style="color:#003366; font-size:2rem;">
+              58.4 MT / Acre
+            </div>
+            <div style="font-size:0.9rem; color:#333333; line-height:1.45; margin-top:4px;">
+              Projected yield based on maintaining optimal soil moisture (+21% vs regional average of 48.0 MT/Ac).
+            </div>
+          </div>
+
+          <!-- Yield-Loss Risk Indicator -->
+          <div class="card" style="border-left:5px solid #d9534f;">
+            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:4px;">
+              <span style="font-size:0.85rem; color:#003366; font-weight:bold; text-transform:uppercase;">
+                Yield-Loss Risk Alert
+              </span>
+              <span class="badge badge-warn">Deficit Alert</span>
+            </div>
+            <div class="status-stat-val" style="color:#d9534f; font-size:1.6rem;">
+              8% – 12% Potential Loss
+            </div>
+            <div style="font-size:0.9rem; color:#333333; line-height:1.45; margin-top:4px;">
+              <strong>Potential risk if delayed:</strong> Plot C moisture is at 31%. Delaying beyond 48 hours risks tiller death.
+            </div>
+          </div>
+        </div>
+
+        <!-- Chart 1: Water Conservation -->
+        <div class="card" style="margin-bottom:20px;">
+          <div class="card-title-row">
+            <div>
+              <h2 style="font-size:1.3rem; color:#003366;">
+                CUMULATIVE WATER CONSUMPTION: TRADITIONAL VS. SUGARCANE360
+              </h2>
+            </div>
+            <span class="badge badge-good">22% Water Saved</span>
+          </div>
+          <div style="height:240px; position:relative;">
+            <canvas id="waterSavingsChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Chart 2: Historical Yield Progression -->
+        <div class="card" style="margin-bottom:20px;">
+          <div class="card-title-row">
+            <div>
+              <h2 style="font-size:1.3rem; color:#003366;">
+                HISTORICAL HARVEST YIELD (MT / ACRE)
+              </h2>
+            </div>
+            <span class="badge badge-info">Simulated Academic Data</span>
+          </div>
+          <div style="height:220px; position:relative;">
+            <canvas id="historicalYieldChart"></canvas>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div style="max-width:1240px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+      <div><strong>SUGARCANE360</strong> &bull; Single e-Procurement B2B Platform & Irrigation System</div>
+      <div>Case Study: <em>KJS-AGR-01 &bull; Kolhapur, Maharashtra</em></div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Water Savings Chart
+      const ctxWater = document.getElementById("waterSavingsChart");
+      if (ctxWater && typeof Chart !== "undefined") {
+        new Chart(ctxWater, {
+          type: "line",
+          data: {
+            labels: ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5", "Week 6", "Week 7", "Week 8"],
+            datasets: [
+              {
+                label: "Traditional Practice (Liters)",
+                data: [45000, 92000, 138000, 185000, 230000, 278000, 324000, 370000],
+                borderColor: "#d9534f",
+                backgroundColor: "transparent",
+                borderDash: [5, 5],
+                borderWidth: 2,
+                tension: 0
+              },
+              {
+                label: "SUGARCANE360 Advisory (Liters)",
+                data: [35000, 71000, 108000, 142000, 178000, 214000, 251000, 288000],
+                borderColor: "#0056b3",
+                backgroundColor: "rgba(0, 86, 179, 0.1)",
+                fill: true,
+                borderWidth: 3,
+                tension: 0
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { position: "top" }
+            },
+            scales: {
+              y: {
+                grid: { color: "#cccccc" },
+                ticks: { callback: v => (v / 1000) + "k L" }
+              },
+              x: { grid: { display: false } }
+            }
+          }
+        });
+      }
+
+      // Historical Yield Bar Chart
+      const ctxYield = document.getElementById("historicalYieldChart");
+      if (ctxYield && typeof Chart !== "undefined") {
+        new Chart(ctxYield, {
+          type: "bar",
+          data: {
+            labels: ["2020", "2021", "2022", "2023", "2024 (AI Guided)"],
+            datasets: [
+              {
+                label: "Yield (MT / Acre)",
+                data: [44.5, 45.2, 46.8, 48.0, 58.4],
+                backgroundColor: ["#cccccc", "#cccccc", "#cccccc", "#cccccc", "#0056b3"],
+                borderRadius: 0
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: {
+              y: { min: 35, max: 65, grid: { color: "#cccccc" } },
+              x: { grid: { display: false } }
+            }
+          }
+        });
+      }
+
+      if (typeof initIcons === 'function') initIcons();
+    });
+  </script>
+</body>
+</html>

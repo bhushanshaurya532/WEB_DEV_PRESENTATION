@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farmer Registration — SUGARCANE360</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-link">
+        <span class="brand-sprout">🌱</span>
+        <span>SUGARCANE360</span>
+      </a>
+      <button class="hamburger-btn" id="navToggleBtn" aria-label="Toggle Navigation">
+        <i data-lucide="menu"></i>
+      </button>
+      <nav class="nav-links-menu" id="navLinksMenu">
+        <a href="index.html" class="nav-item-link">Overview</a>
+        <a href="dashboard.html" class="nav-item-link">Dashboard</a>
+        <a href="plots.html" class="nav-item-link">My Plots</a>
+        <a href="advisory.html" class="nav-item-link">Advisory</a>
+        <a href="registration.html" class="nav-item-link active">Farmer Registration</a>
+        <a href="login.html" class="nav-item-link">Farmer Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content" style="max-width: 860px;">
+    
+    <!-- Page Intro -->
+    <div class="page-intro" style="margin-bottom: 24px;">
+      <div style="display:inline-flex; align-items:center; gap:6px; padding:3px 10px; background:var(--forest-subtle); border:1px solid #cce3d5; border-radius:var(--radius-full); font-size:0.75rem; font-weight:700; color:var(--forest); margin-bottom:8px;">
+        Onboarding Portal &bull; Case Study KJS-AGR-01 &bull; Precision Agriculture
+      </div>
+      <h1 class="page-title">Sugarcane Farmer &amp; Plot Registration</h1>
+      <p class="page-subtitle">
+        Register your sugarcane farm details to activate real-time soil telemetry, AI irrigation advisory, and smart pump scheduling.
+      </p>
+    </div>
+
+    <!-- Success Confirmation Banner -->
+    <div id="registrationSuccessBanner" style="display: none;"></div>
+
+    <!-- Main Registration Card -->
+    <div class="card" style="box-shadow: var(--shadow-md);">
+      <form id="farmerRegisterForm" action="/submit" method="post" enctype="multipart/form-data" novalidate>
+        
+        <!-- Section 1: Personal Information -->
+        <div style="margin-bottom: 24px;">
+          <h3 style="font-size: 1.05rem; color: var(--forest-dark); margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid var(--forest-subtle); display:flex; align-items:center; gap:8px;">
+            <i data-lucide="user-check" style="width:18px; height:18px; color:var(--forest);"></i>
+            1. Personal &amp; Location Details
+          </h3>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;">
+            <!-- Farmer Name -->
+            <div class="form-group">
+              <label for="username" class="form-label">Farmer Full Name <span style="color:var(--status-danger);">*</span></label>
+              <input type="text" id="username" name="username" class="form-input" placeholder="e.g. Ramesh Patil" autofocus required>
+              <span class="error-msg" id="usernameError"></span>
+            </div>
+
+            <!-- Mobile Number -->
+            <div class="form-group">
+              <label for="mobile" class="form-label">Mobile Number <span style="color:var(--status-danger);">*</span></label>
+              <input type="tel" id="mobile" name="mobile" class="form-input" placeholder="10-digit mobile (e.g. 9876543210)" required>
+              <span class="error-msg" id="mobileError"></span>
+            </div>
+
+            <!-- Email Address -->
+            <div class="form-group">
+              <label for="email" class="form-label">Email Address <span style="color:var(--status-danger);">*</span></label>
+              <input type="email" id="email" name="email" class="form-input" placeholder="e.g. ramesh.patil@agri.in" required>
+              <span class="error-msg" id="emailError"></span>
+            </div>
+
+            <!-- Village / Location -->
+            <div class="form-group">
+              <label for="village" class="form-label">Village / Gram Panchayat <span style="color:var(--status-danger);">*</span></label>
+              <input type="text" id="village" name="village" class="form-input" placeholder="e.g. Shirol, Hatkanangale" required>
+              <span class="error-msg" id="villageError"></span>
+            </div>
+
+            <!-- District -->
+            <div class="form-group">
+              <label for="district" class="form-label">District / Region</label>
+              <select id="district" name="district" class="form-select">
+                <option value="Kolhapur" selected>Kolhapur, Maharashtra</option>
+                <option value="Sangli">Sangli, Maharashtra</option>
+                <option value="Satara">Satara, Maharashtra</option>
+                <option value="Solapur">Solapur, Maharashtra</option>
+                <option value="Pune">Pune, Maharashtra</option>
+                <option value="Belagavi">Belagavi, Karnataka</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 2: Farm & Crop Attributes -->
+        <div style="margin-bottom: 24px;">
+          <h3 style="font-size: 1.05rem; color: var(--forest-dark); margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid var(--forest-subtle); display:flex; align-items:center; gap:8px;">
+            <i data-lucide="sprout" style="width:18px; height:18px; color:var(--forest);"></i>
+            2. Sugarcane Farm &amp; Agronomic Characteristics
+          </h3>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;">
+            <!-- Land Area -->
+            <div class="form-group">
+              <label for="landarea" class="form-label">Total Sugarcane Area (Acres) <span style="color:var(--status-danger);">*</span></label>
+              <input type="number" step="0.1" min="0.1" max="100" id="landarea" name="landarea" class="form-input" placeholder="e.g. 9.3" required>
+              <span class="error-msg" id="landareaError"></span>
+            </div>
+
+            <!-- Sugarcane Variety -->
+            <div class="form-group">
+              <label for="variety" class="form-label">Sugarcane Variety</label>
+              <select id="variety" name="variety" class="form-select">
+                <option value="Co 86032 (Nayana)">Co 86032 (Nayana) — High Sugar</option>
+                <option value="Co 0238 (Karan 4)">Co 0238 (Karan 4)</option>
+                <option value="CoM 0265 (Phule 0265)">CoM 0265 (Phule 0265) — High Biomass</option>
+                <option value="MS 10001">MS 10001 (Phule 10001)</option>
+                <option value="VSI 434">VSI 434</option>
+              </select>
+            </div>
+
+            <!-- Crop Growth Stage -->
+            <div class="form-group">
+              <label for="cropstage" class="form-label">Current Crop Stage <span style="color:var(--status-danger);">*</span></label>
+              <select id="cropstage" name="cropstage" class="form-select" required>
+                <option value="">-- Select Crop Stage --</option>
+                <option value="Germination">Germination &amp; Sprouting (0 - 45 Days)</option>
+                <option value="Tillering">Tillering Phase (45 - 120 Days)</option>
+                <option value="Grand Growth" selected>Grand Growth &amp; Elongation (120 - 270 Days)</option>
+                <option value="Maturity">Maturity &amp; Ripening (270 - 360 Days)</option>
+                <option value="Harvesting">Harvesting Stage</option>
+              </select>
+              <span class="error-msg" id="cropstageError"></span>
+            </div>
+
+            <!-- Soil Type -->
+            <div class="form-group">
+              <label for="soiltype" class="form-label">Soil Texture / Type <span style="color:var(--status-danger);">*</span></label>
+              <select id="soiltype" name="soiltype" class="form-select" required>
+                <option value="">-- Select Soil Type --</option>
+                <option value="Sandy Loam">Sandy Loam Soil (Fast Draining)</option>
+                <option value="Medium Black" selected>Medium Black Soil (Regur)</option>
+                <option value="Heavy Clay">Heavy Deep Black Clay (High Retention)</option>
+                <option value="Alluvial">Alluvial River Basin Soil</option>
+                <option value="Laterite">Laterite Soil</option>
+              </select>
+              <span class="error-msg" id="soiltypeError"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 3: Irrigation System & Telemetry -->
+        <div style="margin-bottom: 24px;">
+          <h3 style="font-size: 1.05rem; color: var(--forest-dark); margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid var(--forest-subtle); display:flex; align-items:center; gap:8px;">
+            <i data-lucide="droplets" style="width:18px; height:18px; color:var(--forest);"></i>
+            3. Irrigation System &amp; Telemetry Setup
+          </h3>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;">
+            <!-- Irrigation Method -->
+            <div class="form-group">
+              <label for="method" class="form-label">Primary Irrigation Method <span style="color:var(--status-danger);">*</span></label>
+              <select id="method" name="method" class="form-select" required>
+                <option value="">-- Select Method --</option>
+                <option value="Drip Irrigation" selected>Drip Irrigation (In-line Lateral 16mm)</option>
+                <option value="Micro Sprinkler">Micro-Sprinkler System</option>
+                <option value="Surface / Furrow">Surface / Furrow Flood Irrigation</option>
+                <option value="Sub-surface Drip">Sub-surface Drip (SDI)</option>
+              </select>
+              <span class="error-msg" id="methodError"></span>
+            </div>
+
+            <!-- Pump HP -->
+            <div class="form-group">
+              <label for="pumphp" class="form-label">Motor Pump Power (HP)</label>
+              <select id="pumphp" name="pumphp" class="form-select">
+                <option value="3 HP">3 HP Electric Motor</option>
+                <option value="5 HP" selected>5 HP Electric Motor</option>
+                <option value="7.5 HP">7.5 HP Heavy Motor</option>
+                <option value="10 HP Solar">10 HP Solar Powered Pump</option>
+              </select>
+            </div>
+
+            <!-- Soil Moisture % -->
+            <div class="form-group">
+              <label for="moisture" class="form-label">Current Soil Moisture (%) <span style="color:var(--status-danger);">*</span></label>
+              <input type="number" min="0" max="100" id="moisture" name="moisture" class="form-input" placeholder="e.g. 42" value="42" required>
+              <span class="error-msg" id="moistureError"></span>
+            </div>
+
+            <!-- Sensor Telemetry ID -->
+            <div class="form-group">
+              <label for="sensorid" class="form-label">Soil Sensor ID (Optional)</label>
+              <input type="text" id="sensorid" name="sensorid" class="form-input" placeholder="e.g. FDR-KJS-101">
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 4: Document Upload & Credentials -->
+        <div style="margin-bottom: 24px;">
+          <h3 style="font-size: 1.05rem; color: var(--forest-dark); margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid var(--forest-subtle); display:flex; align-items:center; gap:8px;">
+            <i data-lucide="file-text" style="width:18px; height:18px; color:var(--forest);"></i>
+            4. Document Attachment &amp; Access Credentials
+          </h3>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;">
+            <!-- File Upload -->
+            <div class="form-group" style="grid-column: 1 / -1;">
+              <label for="photo" class="form-label">Farm / Soil Test Report Image Upload</label>
+              <input type="file" id="photo" name="photo" accept="image/*" class="form-input" style="padding:6px;">
+              <div style="font-size:0.75rem; color:var(--text-muted); margin-top:4px;">Upload optional farm photo or soil analysis document (JPEG/PNG).</div>
+              <img id="photoPreview" src="" alt="Farm Photo Preview" style="display:none; max-width:160px; height:auto; margin-top:10px; border-radius:var(--radius-sm); border:1px solid var(--border);">
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+              <label for="password" class="form-label">Create Password</label>
+              <input type="password" id="password" name="password" class="form-input" placeholder="Enter password for mobile app login">
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="form-group">
+              <label for="confirmpassword" class="form-label">Confirm Password</label>
+              <input type="password" id="confirmpassword" name="confirmpassword" class="form-input" placeholder="Repeat password">
+            </div>
+          </div>
+        </div>
+
+        <!-- Buttons -->
+        <div style="display: flex; gap: 12px; justify-content: flex-end; align-items: center; border-top: 1px solid var(--border-light); padding-top: 18px;">
+          <button type="reset" class="btn btn-secondary btn-lg">Reset Form</button>
+          <button type="submit" class="btn btn-primary btn-lg" style="min-width: 200px;">
+            <i data-lucide="check-circle" style="width:18px; height:18px;"></i>
+            Complete Registration &rarr;
+          </button>
+        </div>
+
+      </form>
+    </div>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div style="max-width:860px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+      <div><strong>SUGARCANE360</strong> &bull; SY Web Dev Lab Mini Project</div>
+      <div>Case Study: <em>KJS-AGR-01 &bull; Kolhapur, Maharashtra</em></div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/register.js"></script>
+</body>
+</html>

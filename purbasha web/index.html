@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SUGARCANE360 — AI Irrigation Advisory System</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Minimal Top Navigation -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-link">
+        <span class="brand-sprout">🌱</span>
+        <span>SUGARCANE360</span>
+      </a>
+      <div style="display:flex; align-items:center; gap:16px;">
+        <span style="font-size:0.78rem; color:var(--text-muted); font-weight:600; display:none; @media(min-width:600px){display:inline;}">
+          Case Study: KJS-AGR-01
+        </span>
+        <a href="registration.html" class="btn btn-primary btn-sm">Farmer Registration</a>
+        <a href="login.html" class="btn btn-secondary btn-sm">Farmer Login</a>
+        <a href="dashboard.html" class="btn btn-primary btn-sm">Open Prototype &rarr;</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="main-content" style="max-width: 960px;">
+    
+    <div style="text-align:center; padding: 40px 10px 30px;">
+      <div style="display:inline-flex; align-items:center; gap:6px; padding:4px 14px; background:var(--forest-subtle); border:1px solid #cce3d5; border-radius:var(--radius-full); font-size:0.78rem; font-weight:700; color:var(--forest); margin-bottom:18px;">
+        <span>Official Case Study</span> &bull; KJS-AGR-01 &bull; Kolhapur, Maharashtra
+      </div>
+
+      <h1 style="font-size:clamp(2rem, 3.8vw, 2.8rem); font-weight:800; color:var(--forest-dark); line-height:1.2; margin-bottom:16px;">
+        Irrigation Advisory System for Sugarcane Crop
+      </h1>
+
+      <p style="font-size:1.05rem; color:var(--text-muted); max-width:680px; margin:0 auto 28px; line-height:1.6;">
+        An AI and sensor-driven decision support prototype designed to optimize sugarcane water consumption, prevent water stress, and support precision agriculture in water-intensive cropping regions.
+      </p>
+
+      <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">
+        <a href="dashboard.html" class="btn btn-primary btn-lg">
+          <i data-lucide="layout-dashboard" style="width:18px; height:18px;"></i>
+          Launch Live Dashboard
+        </a>
+        <a href="advisory.html" class="btn btn-secondary btn-lg">
+          <i data-lucide="sparkles" style="width:18px; height:18px;"></i>
+          Inspect AI Advisory
+        </a>
+      </div>
+    </div>
+
+    <!-- Problem Statement Summary Box -->
+    <div class="card" style="margin-bottom: 36px; border-left: 4px solid var(--forest);">
+      <h3 style="font-size: 1.05rem; margin-bottom: 6px; color: var(--forest-dark);">
+        The Core Problem in Sugarcane Cultivation
+      </h3>
+      <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-main);">
+        Sugarcane is one of the highest water-consuming crops, requiring 1,500 to 2,500 mm of water throughout its cycle. In practice, irrigation decisions are commonly made using farmer intuition or rigid time intervals. This often results in <strong>over-irrigation</strong> (leaching soil nutrients, electricity wastage) or <strong>under-irrigation</strong> (stunting tillering and Grand Growth cane elongation), leading to substantial yield losses.
+      </p>
+    </div>
+
+    <!-- Simple 3-Step Workflow -->
+    <div style="margin-bottom: 40px;">
+      <div style="text-align: center; margin-bottom: 20px;">
+        <h2 style="font-size: 1.25rem;">Simple 3-Step Advisory Workflow</h2>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">How field telemetry transforms into actionable farmer guidance</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; position: relative;">
+        <!-- Step 1 -->
+        <div class="card" style="text-align: center; padding: 24px 18px;">
+          <div style="width: 44px; height: 44px; border-radius: 50%; background: var(--forest-subtle); color: var(--forest); display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; font-weight: 800; font-size: 1.1rem;">
+            1
+          </div>
+          <h3 style="font-size: 1rem; margin-bottom: 6px;">Field Data</h3>
+          <p style="font-size: 0.84rem; color: var(--text-muted);">
+            Continuous soil moisture sensors (15cm/30cm depths), local weather station feeds, soil texture mapping, and crop stage tracking.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="card" style="text-align: center; padding: 24px 18px; border-color: var(--forest);">
+          <div style="width: 44px; height: 44px; border-radius: 50%; background: var(--forest); color: #fff; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; font-weight: 800; font-size: 1.1rem;">
+            2
+          </div>
+          <h3 style="font-size: 1rem; margin-bottom: 6px;">AI Analysis</h3>
+          <p style="font-size: 0.84rem; color: var(--text-muted);">
+            Dynamic evapotranspiration (ETc) calculation, moisture depletion threshold modeling, and 7-day rainfall forecast integration.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="card" style="text-align: center; padding: 24px 18px;">
+          <div style="width: 44px; height: 44px; border-radius: 50%; background: var(--forest-subtle); color: var(--forest); display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; font-weight: 800; font-size: 1.1rem;">
+            3
+          </div>
+          <h3 style="font-size: 1rem; margin-bottom: 6px;">Irrigation Advisory</h3>
+          <p style="font-size: 0.84rem; color: var(--text-muted);">
+            Specific, actionable instructions for each plot: exact start time, runtime duration, pump assignment, and human-in-the-loop control.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 Core Feature Cards -->
+    <div style="margin-bottom: 40px;">
+      <div style="text-align: center; margin-bottom: 20px;">
+        <h2 style="font-size: 1.25rem;">Built Strictly for Case Study Requirements</h2>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">Practical agricultural engineering principles, zero fluff</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">
+        <div class="card">
+          <div style="color: var(--forest); margin-bottom: 10px;">
+            <i data-lucide="map-pin" style="width: 24px; height: 24px;"></i>
+          </div>
+          <h3 style="font-size: 1rem; margin-bottom: 6px;">Plot-Specific Tailoring</h3>
+          <p style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.5;">
+            Irrigation is tailored to individual plot conditions. Plot A (Grand Growth, Sandy Loam) receives a different recommendation than Plot C (Tillering, Medium Black).
+          </p>
+        </div>
+
+        <div class="card">
+          <div style="color: var(--forest); margin-bottom: 10px;">
+            <i data-lucide="cloud-rain" style="width: 24px; height: 24px;"></i>
+          </div>
+          <h3 style="font-size: 1rem; margin-bottom: 6px;">Weather &amp; Rainfall Adaptation</h3>
+          <p style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.5;">
+            Avoids pumping when rain is imminent. Forecasted precipitation dynamically reduces or delays scheduled irrigation intervals.
+          </p>
+        </div>
+
+        <div class="card">
+          <div style="color: var(--forest); margin-bottom: 10px;">
+            <i data-lucide="sliders" style="width: 24px; height: 24px;"></i>
+          </div>
+          <h3 style="font-size: 1rem; margin-bottom: 6px;">Human-in-the-Loop Control</h3>
+          <p style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.5;">
+            The farmer retains ultimate authority. Ramesh can accept, modify pump durations, or override recommendations with real-time feedback logging.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Final CTA Banner -->
+    <div class="card" style="text-align: center; background: var(--forest); color: #fff; padding: 32px 20px;">
+      <h2 style="color: #fff; font-size: 1.35rem; margin-bottom: 8px;">Explore the SUGARCANE360 Prototype</h2>
+      <p style="color: #d8f3dc; font-size: 0.9rem; margin-bottom: 20px; max-width: 500px; margin-left: auto; margin-right: auto;">
+        Interactive prototype featuring 4 simulated plots, advisory engine, pump scheduler, 4-language AI assistant, and agronomic analytics.
+      </p>
+      <a href="dashboard.html" class="btn btn-secondary btn-lg" style="background: #fff; color: var(--forest-dark); border: none; font-weight: 700;">
+        Open Farmer Dashboard &rarr;
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Clean Footer -->
+  <footer class="site-footer">
+    <div style="max-width: 1180px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+      <div>
+        <strong>SUGARCANE360</strong> &bull; SY Computer Engineering Web Development Lab Mini Project
+      </div>
+      <div>
+        Case Study: <em>KJS-AGR-01 — Irrigation Advisory System for Sugarcane Crop using AI and Sensor-based Technology</em>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

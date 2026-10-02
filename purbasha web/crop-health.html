@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crop Health &amp; Stage — SUGARCANE360</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="dashboard.html" class="brand-link">
+        <span class="brand-sprout">🌱</span>
+        <span>SUGARCANE360</span>
+      </a>
+      <button class="hamburger-btn" id="navToggleBtn" aria-label="Toggle Navigation">
+        <i data-lucide="menu"></i>
+      </button>
+      <nav class="nav-links-menu" id="navLinksMenu">
+        <a href="dashboard.html" class="nav-item-link">Dashboard</a>
+        <a href="plots.html" class="nav-item-link">My Plots</a>
+        <a href="advisory.html" class="nav-item-link">Advisory</a>
+        <a href="weather.html" class="nav-item-link">Weather</a>
+        <a href="sensors.html" class="nav-item-link">Sensors</a>
+        <a href="crop-health.html" class="nav-item-link active">Crop Health</a>
+        <a href="fertigation.html" class="nav-item-link">Fertigation</a>
+        <a href="analytics.html" class="nav-item-link">Analytics</a>
+        <a href="pump.html" class="nav-item-link">Pump</a>
+        <a href="alerts.html" class="nav-item-link">Alerts <span class="alert-dot-badge">2</span></a>
+        <a href="assistant.html" class="nav-item-link">AI Assistant</a>
+        <a href="registration.html" class="nav-item-link">Registration</a>
+        <a href="login.html" class="nav-item-link" style="color:var(--text-light); margin-left:8px;">Logout</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content" style="max-width: 980px;">
+    
+    <div class="page-intro">
+      <div style="font-size:0.8rem; font-weight:700; color:var(--sage); text-transform:uppercase; letter-spacing:0.04em;">
+        Agronomy &amp; Phenology
+      </div>
+      <h1 class="page-title">Sugarcane Crop Health &amp; Stage Timeline</h1>
+      <p class="page-subtitle">
+        Phenological stage tracking and canopy moisture stress monitoring for precision crop water management.
+      </p>
+    </div>
+
+    <!-- 4 Primary Health Indicators -->
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:14px; margin-bottom:24px;">
+      <div class="card card-sm">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <span style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Current Growth Stage</span>
+          <i data-lucide="layers" style="width:16px; height:16px; color:var(--forest);"></i>
+        </div>
+        <div class="status-stat-val" style="color:var(--forest);">Grand Growth</div>
+        <div class="status-stat-sub">Day 142 of 360-day cycle</div>
+      </div>
+
+      <div class="card card-sm">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <span style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Overall Health Status</span>
+          <i data-lucide="heart" style="width:16px; height:16px; color:var(--status-good);"></i>
+        </div>
+        <div class="status-stat-val" style="color:var(--status-good);">Good</div>
+        <div class="status-stat-sub">Vigorous cane elongation &amp; canopy</div>
+      </div>
+
+      <div class="card card-sm">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <span style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Canopy NDVI Proxy</span>
+          <i data-lucide="sparkles" style="width:16px; height:16px; color:var(--sage);"></i>
+        </div>
+        <div class="status-stat-val">0.78</div>
+        <div class="status-stat-sub">Dense green biomass index</div>
+      </div>
+
+      <div class="card card-sm">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <span style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Water Stress Level</span>
+          <i data-lucide="activity" style="width:16px; height:16px; color:var(--status-good);"></i>
+        </div>
+        <div class="status-stat-val" style="color:var(--status-good);">Low (12%)</div>
+        <div class="status-stat-sub">Maintained below critical 30% barrier</div>
+      </div>
+    </div>
+
+    <!-- 4-Stage Sugarcane Timeline -->
+    <div class="card" style="margin-bottom:24px;">
+      <div class="card-title-row">
+        <div>
+          <h2 style="font-size:1.15rem; color:var(--forest-dark); font-weight:700;">
+            4-Stage Sugarcane Phenological Progression
+          </h2>
+          <p style="font-size:0.8rem; margin-top:2px;">Dynamic crop coefficient (\(K_c\)) adjustment by stage.</p>
+        </div>
+        <span class="badge badge-good">Stage 3 Active</span>
+      </div>
+
+      <div class="crop-stages-bar">
+        <!-- Stage 1 -->
+        <div class="crop-stage-item">
+          <div class="crop-stage-dot" style="background:var(--forest-subtle); border-color:var(--forest); color:var(--forest);">✓</div>
+          <div class="crop-stage-name">1. Germination</div>
+          <div style="font-size:0.72rem; color:var(--text-light);">Days 0–60</div>
+        </div>
+
+        <!-- Stage 2 -->
+        <div class="crop-stage-item">
+          <div class="crop-stage-dot" style="background:var(--forest-subtle); border-color:var(--forest); color:var(--forest);">✓</div>
+          <div class="crop-stage-name">2. Tillering</div>
+          <div style="font-size:0.72rem; color:var(--text-light);">Days 60–120</div>
+        </div>
+
+        <!-- Stage 3 (Highlighted) -->
+        <div class="crop-stage-item active">
+          <div class="crop-stage-dot" style="background:var(--forest); color:#fff; border-color:var(--forest); box-shadow:0 0 0 4px rgba(27,67,50,0.15);">★</div>
+          <div class="crop-stage-name" style="color:var(--forest-dark); font-weight:800;">3. Grand Growth</div>
+          <div style="font-size:0.72rem; color:var(--forest); font-weight:700;">Days 120–270 (Active)</div>
+        </div>
+
+        <!-- Stage 4 -->
+        <div class="crop-stage-item">
+          <div class="crop-stage-dot" style="background:var(--cream); color:var(--text-light);">4</div>
+          <div class="crop-stage-name">4. Maturity</div>
+          <div style="font-size:0.72rem; color:var(--text-light);">Days 270–360</div>
+        </div>
+      </div>
+
+      <!-- Critical Grand Growth Focus Banner -->
+      <div style="background:var(--forest-subtle); border:1px solid #cce3d5; border-radius:var(--radius-sm); padding:16px; margin-top:20px;">
+        <div style="font-weight:800; font-size:0.95rem; color:var(--forest-dark); margin-bottom:4px;">
+          🌾 Grand Growth Stage Priority (Days 120–270)
+        </div>
+        <p style="font-size:0.86rem; color:var(--forest-dark); line-height:1.5;">
+          <strong>70% to 80% of total sugarcane water</strong> is consumed during this critical stage. Internodes lengthen quickly, leaf area reaches maximum canopy spread, and transpiration peaks. Any water deficit during this window causes irreversible cane shortening and permanent tonnage reduction.
+        </p>
+      </div>
+
+      <!-- Stage Impact Note -->
+      <div style="background:var(--cream); border-radius:var(--radius-sm); border:1px solid var(--border-light); padding:14px; margin-top:14px; font-size:0.84rem; line-height:1.55; color:var(--text-main);">
+        <strong>Agronomic Impact on Advisory Model:</strong><br>
+        The AI model scales the crop coefficient (\(K_c\)) from 0.45 in early germination up to <strong>1.25</strong> during Grand Growth. When combined with Kolhapur's 29°C temperature, this triggers frequent, timely 2.5-hour morning watering cycles to maintain root-zone soil moisture between 50% and 70%.
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div style="max-width:1180px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+      <div><strong>SUGARCANE360</strong> &bull; SY Web Dev Lab Mini Project</div>
+      <div>Case Study: <em>KJS-AGR-01</em></div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Farmer Assistant — SUGARCANE360</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Top Utility Header -->
+  <div class="top-utility-bar">
+    <div class="top-utility-container">
+      <div class="top-utility-text">
+        Welcome To SugarMart & SUGARCANE360 e-Procurement Portal &nbsp;|&nbsp; 📞 Toll Free: +91-8956132095 (9.30 AM to 05.30 PM, Mon-Fri)
+      </div>
+      <div class="top-utility-actions">
+        <a href="registration.html" class="top-btn">Factory Registration</a>
+        <a href="registration.html" class="top-btn">Supplier Registration</a>
+        <a href="login.html" class="top-btn top-btn-solid">Login</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-link">
+        <span class="brand-box-logo">SUGARCANE360</span>
+      </a>
+      <button class="hamburger-btn" id="navToggleBtn" aria-label="Toggle Navigation">
+        ☰ MENU
+      </button>
+      <nav class="nav-links-menu" id="navLinksMenu">
+        <a href="index.html" class="nav-item-link">Home</a>
+        <a href="dashboard.html" class="nav-item-link">Dashboard</a>
+        <a href="plots.html" class="nav-item-link">My Plots</a>
+        <a href="advisory.html" class="nav-item-link">Advisory</a>
+        <a href="weather.html" class="nav-item-link">Weather</a>
+        <a href="sensors.html" class="nav-item-link">Sensors</a>
+        <a href="crop-health.html" class="nav-item-link">Crop Health</a>
+        <a href="fertigation.html" class="nav-item-link">Fertigation</a>
+        <a href="analytics.html" class="nav-item-link">Analytics</a>
+        <a href="pump.html" class="nav-item-link">Pump Control</a>
+        <a href="alerts.html" class="nav-item-link">Alerts <span class="alert-dot-badge">2</span></a>
+        <a href="assistant.html" class="nav-item-link active">AI Helpdesk</a>
+        <a href="registration.html" class="nav-item-link">Registration</a>
+        <a href="login.html" class="nav-item-link" style="background:#d9534f; color:#fff;">Logout</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Blue Header Banner -->
+  <div class="page-blue-banner">
+    <div class="banner-container">
+      <h1>AI FARMER HELPDESK &amp; MULTILINGUAL ASSISTANT</h1>
+      <p>Conversational Decision Support for Farmers in English, Marathi, Hindi &amp; Kannada</p>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    
+    <div class="portal-layout-grid">
+
+      <!-- Left Sidebar Navigation Panel -->
+      <aside class="portal-sidebar">
+        <div class="portal-sidebar-title">HELPDESK MENU</div>
+        <a href="assistant.html" class="sidebar-nav-btn active">AI Farmer Assistant</a>
+        <a href="advisory.html" class="sidebar-nav-btn">Plot Advisory Engine</a>
+        <a href="weather.html" class="sidebar-nav-btn">Weather Forecasts</a>
+        <a href="dashboard.html" class="sidebar-nav-btn">Farmer Dashboard</a>
+      </aside>
+
+      <!-- Right Content Area -->
+      <section>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:10px;">
+          <h2 style="font-size:1.3rem; color:#003366; margin:0;">CONVERSATIONAL AGRI HELPDESK</h2>
+          <div style="display:flex; align-items:center; gap:8px;">
+            <span style="font-size:0.95rem; color:#003366; font-weight:bold;">Select Language:</span>
+            <select id="assistantLangSelector" style="padding:6px 12px; font-weight:bold; font-size:0.95rem; border:2px solid #0056b3; background:#ffffff; color:#003366;">
+              <option value="en" selected>English</option>
+              <option value="mr">मराठी (Marathi)</option>
+              <option value="hi">हिंदी (Hindi)</option>
+              <option value="kn">ಕನ್ನಡ (Kannada)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Chat Container -->
+        <div class="chat-container" style="margin-bottom:20px;">
+          <!-- Chat Header -->
+          <div style="padding:12px 16px; background:#0056b3; color:#ffffff; font-weight:bold; display:flex; justify-content:space-between; align-items:center;">
+            <span>SUGARCANE360 FIELD COPILOT</span>
+            <span class="badge badge-good" style="background:#ffffff; color:#0056b3;">Active</span>
+          </div>
+
+          <!-- Chat History -->
+          <div class="chat-history" id="assistantChatMessages" style="height:360px;">
+            <!-- Injected via js/assistant.js -->
+          </div>
+
+          <!-- Quick Chips -->
+          <div style="padding:10px; background:#ffffff; border-top:1px solid #cccccc; display:flex; gap:6px; overflow-x:auto; white-space:nowrap;">
+            <button class="chip-btn" onclick="askQuestion('When should I irrigate Plot A?')">
+              When should I irrigate Plot A?
+            </button>
+            <button class="chip-btn" onclick="askQuestion('Why is irrigation recommended tomorrow?')">
+              Why is irrigation recommended tomorrow?
+            </button>
+            <button class="chip-btn" onclick="askQuestion('Is rain expected in Kolhapur this week?')">
+              Is rain expected in Kolhapur this week?
+            </button>
+            <button class="chip-btn" onclick="askQuestion('Which plot has the lowest moisture?')">
+              Which plot has the lowest moisture?
+            </button>
+          </div>
+
+          <!-- Input Row -->
+          <div class="chat-input-row">
+            <input type="text" id="chatInput" placeholder="Type your query about soil moisture, advisory, or weather..." 
+                   class="form-input" style="flex:1;">
+            <button class="btn btn-primary" id="sendChatBtn">SEND</button>
+          </div>
+        </div>
+
+        <div class="card" style="background:#e6f0fa; border:2px solid #0056b3;">
+          <div style="font-size:0.95rem; color:#003366; line-height:1.5;">
+            <strong>Case Study Principle (KJS-AGR-01):</strong> Bridging the digital divide for smallholder sugarcane farmers requires multilingual accessibility. The assistant allows farmers like Ramesh Patil to query recommendations in their native tongue (Marathi, Hindi, or Kannada) and receive immediate plain-language explanations.
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div style="max-width:1240px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+      <div><strong>SUGARCANE360</strong> &bull; Single e-Procurement B2B Platform & Irrigation System</div>
+      <div>Case Study: <em>KJS-AGR-01 &bull; Kolhapur, Maharashtra</em></div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/assistant.js"></script>
+</body>
+</html>

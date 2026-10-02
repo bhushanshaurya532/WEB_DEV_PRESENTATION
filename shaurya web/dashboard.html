@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farmer Dashboard — SUGARCANE360</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Top Utility Announcement Header (TenderLive Screenshot 2 Style) -->
+  <div class="top-utility-bar">
+    <div class="top-utility-container">
+      <div class="top-utility-text">
+        Welcome To SugarMart & SUGARCANE360 e-Procurement Portal &nbsp;|&nbsp; 📞 Toll Free: +91-8956132095 (9.30 AM to 05.30 PM, Mon-Fri)
+      </div>
+      <div class="top-utility-actions">
+        <a href="registration.html" class="top-btn">Sugar Factory Registration</a>
+        <a href="registration.html" class="top-btn">Supplier / Farmer Registration</a>
+        <a href="login.html" class="top-btn top-btn-solid">Login</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header Bar -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-link">
+        <span class="brand-box-logo">SUGARCANE360</span>
+      </a>
+      <button class="hamburger-btn" id="navToggleBtn" aria-label="Toggle Navigation">
+        ☰ MENU
+      </button>
+      <nav class="nav-links-menu" id="navLinksMenu">
+        <a href="index.html" class="nav-item-link">Home</a>
+        <a href="dashboard.html" class="nav-item-link active">Dashboard</a>
+        <a href="plots.html" class="nav-item-link">My Plots</a>
+        <a href="advisory.html" class="nav-item-link">Advisory</a>
+        <a href="weather.html" class="nav-item-link">Weather</a>
+        <a href="sensors.html" class="nav-item-link">Sensors</a>
+        <a href="crop-health.html" class="nav-item-link">Crop Health</a>
+        <a href="fertigation.html" class="nav-item-link">Fertigation</a>
+        <a href="analytics.html" class="nav-item-link">Analytics</a>
+        <a href="pump.html" class="nav-item-link">Pump Control</a>
+        <a href="alerts.html" class="nav-item-link">Alerts <span class="alert-dot-badge">2</span></a>
+        <a href="assistant.html" class="nav-item-link">AI Helpdesk</a>
+        <a href="registration.html" class="nav-item-link">Registration</a>
+        <a href="login.html" class="nav-item-link" style="background:#d9534f; color:#fff; border-color:#b52b27;">Logout</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Blue Header Banner (Screenshot 2 Style) -->
+  <div class="page-blue-banner">
+    <div class="banner-container">
+      <h1>FARMER IRRIGATION DASHBOARD</h1>
+      <p>Real-Time Sugarcane Telemetry, ETc Evapotranspiration Model &amp; Pump Decision Control</p>
+    </div>
+  </div>
+
+  <!-- Main Content Area -->
+  <main class="main-content">
+    
+    <div class="portal-layout-grid">
+
+      <!-- Left Sidebar Navigation Panel (TenderLive Screenshot 2 Style) -->
+      <aside class="portal-sidebar">
+        <div class="portal-sidebar-title">FARMER PORTAL MENU</div>
+        <a href="dashboard.html" class="sidebar-nav-btn active">Farmer Dashboard Overview</a>
+        <a href="plots.html" class="sidebar-nav-btn">Plot Management (4 Plots)</a>
+        <a href="advisory.html" class="sidebar-nav-btn">AI Irrigation Advisory</a>
+        <a href="weather.html" class="sidebar-nav-btn">Local Weather Forecast</a>
+        <a href="sensors.html" class="sidebar-nav-btn">Soil Telemetry Log</a>
+        <a href="crop-health.html" class="sidebar-nav-btn">Crop Stage &amp; Tillering</a>
+        <a href="fertigation.html" class="sidebar-nav-btn">Fertigation Schedule</a>
+        <a href="analytics.html" class="sidebar-nav-btn">Water Consumption Logs</a>
+        <a href="pump.html" class="sidebar-nav-btn">Pump Remote Automation</a>
+        <a href="alerts.html" class="sidebar-nav-btn">System Alerts [2]</a>
+        <a href="assistant.html" class="sidebar-nav-btn">AI Farmer Helpdesk</a>
+      </aside>
+
+      <!-- Right Main Content Dashboard Grid -->
+      <section class="dashboard-grid">
+
+        <!-- 1. Header + Farmer Greeting -->
+        <section class="dashboard-greeting-wrap">
+          <div style="font-size:0.9rem; font-weight:800; color:#0056b3; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:4px;">
+            Farmer Dashboard &bull; Case Study KJS-AGR-01
+          </div>
+          <h1 class="dashboard-greeting-title">WELCOME BACK, RAMESH DESHMUKH</h1>
+          <div class="dashboard-greeting-meta">
+            📍 Location: Kolhapur, Maharashtra &nbsp;|&nbsp; Total Cultivated Land: 9.3 Acres (4 Plots)
+          </div>
+        </section>
+
+        <!-- 2. Farm Overview with 4 Plots (Sharp SVG Grid) -->
+        <section class="farm-card">
+          <div class="farm-header-row">
+            <h2 class="farm-title">
+              FIELD MAP &amp; PLOT SELECTOR
+            </h2>
+            <span class="farm-hint">[ Click any plot to inspect live sensors ]</span>
+          </div>
+
+          <div class="farm-svg-box">
+            <svg class="farm-svg" viewBox="0 0 680 180" xmlns="http://www.w3.org/2000/svg" id="dashFarmSvg">
+              <!-- Sharp Outer Boundary -->
+              <rect x="0" y="0" width="680" height="180" rx="0" fill="#ffffff" stroke="#0056b3" stroke-width="2"/>
+              
+              <!-- Plot A (Top Left) -->
+              <g class="plot-cell" id="svg-plot-a" onclick="switchPlot('plot-a')">
+                <rect x="12" y="12" width="322" height="74" rx="0" fill="#f8f9fa" stroke="#0056b3" stroke-width="2"/>
+                <text x="28" y="44" fill="#003366" font-size="16" font-weight="800">PLOT A (2.4 Acres)</text>
+                <text x="28" y="64" fill="#333333" font-size="13" font-weight="bold">Grand Growth Stage</text>
+                <text x="316" y="54" text-anchor="end" fill="#0056b3" font-size="13" font-weight="800">Irrigate Tomorrow</text>
+              </g>
+
+              <!-- Plot B (Top Right) -->
+              <g class="plot-cell" id="svg-plot-b" onclick="switchPlot('plot-b')">
+                <rect x="346" y="12" width="322" height="74" rx="0" fill="#f8f9fa" stroke="#cccccc" stroke-width="2"/>
+                <text x="362" y="44" fill="#003366" font-size="16" font-weight="800">PLOT B (1.8 Acres)</text>
+                <text x="362" y="64" fill="#333333" font-size="13" font-weight="bold">Grand Growth Stage</text>
+                <text x="650" y="54" text-anchor="end" fill="#1b7e36" font-size="13" font-weight="800">Moisture Optimal</text>
+              </g>
+
+              <!-- Plot C (Bottom Left) -->
+              <g class="plot-cell" id="svg-plot-c" onclick="switchPlot('plot-c')">
+                <rect x="12" y="94" width="322" height="74" rx="0" fill="#f8f9fa" stroke="#cccccc" stroke-width="2"/>
+                <text x="28" y="126" fill="#003366" font-size="16" font-weight="800">PLOT C (3.1 Acres)</text>
+                <text x="28" y="146" fill="#333333" font-size="13" font-weight="bold">Tillering Stage</text>
+                <text x="316" y="136" text-anchor="end" fill="#d9534f" font-size="13" font-weight="800">Needs Water Now</text>
+              </g>
+
+              <!-- Plot D (Bottom Right) -->
+              <g class="plot-cell" id="svg-plot-d" onclick="switchPlot('plot-d')">
+                <rect x="346" y="94" width="322" height="74" rx="0" fill="#f8f9fa" stroke="#cccccc" stroke-width="2"/>
+                <text x="362" y="126" fill="#003366" font-size="16" font-weight="800">PLOT D (2.0 Acres)</text>
+                <text x="362" y="146" fill="#333333" font-size="13" font-weight="bold">Maturity Stage</text>
+                <text x="650" y="136" text-anchor="end" fill="#0056b3" font-size="13" font-weight="800">Soil Moist</text>
+              </g>
+            </svg>
+          </div>
+        </section>
+
+        <!-- 3. Large Today's Irrigation Card -->
+        <section id="dashAdvisoryContainer">
+          <!-- Rendered via js/dashboard.js -->
+        </section>
+
+        <!-- 4. Three Status Cards -->
+        <section id="dashStatusContainer">
+          <!-- Rendered via js/dashboard.js -->
+        </section>
+
+        <!-- 5. Alerts Section -->
+        <section class="card">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; border-bottom:2px solid #0056b3; padding-bottom:6px;">
+            <h2 style="margin:0; font-size:1.3rem; color:#003366;">
+              ACTIVE SYSTEM ALERTS
+            </h2>
+            <a href="alerts.html" style="font-size:0.9rem; font-weight:bold; color:#0056b3;">View All System Alerts &rarr;</a>
+          </div>
+          <div id="dashAlertsList">
+            <!-- Rendered via js/dashboard.js -->
+          </div>
+        </section>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div style="max-width:1240px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+      <div>
+        <strong>SUGARCANE360</strong> &bull; Single e-Procurement B2B Platform & Irrigation System
+      </div>
+      <div>
+        Case Study: <em>KJS-AGR-01 &bull; Kolhapur, Maharashtra</em>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

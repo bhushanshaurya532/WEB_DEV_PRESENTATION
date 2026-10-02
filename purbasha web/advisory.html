@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Irrigation Advisory — SUGARCANE360</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="dashboard.html" class="brand-link">
+        <span class="brand-sprout">🌱</span>
+        <span>SUGARCANE360</span>
+      </a>
+      <button class="hamburger-btn" id="navToggleBtn" aria-label="Toggle Navigation">
+        <i data-lucide="menu"></i>
+      </button>
+      <nav class="nav-links-menu" id="navLinksMenu">
+        <a href="dashboard.html" class="nav-item-link">Dashboard</a>
+        <a href="plots.html" class="nav-item-link">My Plots</a>
+        <a href="advisory.html" class="nav-item-link active">Advisory</a>
+        <a href="weather.html" class="nav-item-link">Weather</a>
+        <a href="sensors.html" class="nav-item-link">Sensors</a>
+        <a href="crop-health.html" class="nav-item-link">Crop Health</a>
+        <a href="fertigation.html" class="nav-item-link">Fertigation</a>
+        <a href="analytics.html" class="nav-item-link">Analytics</a>
+        <a href="pump.html" class="nav-item-link">Pump</a>
+        <a href="alerts.html" class="nav-item-link">Alerts <span class="alert-dot-badge">2</span></a>
+        <a href="assistant.html" class="nav-item-link">AI Assistant</a>
+        <a href="registration.html" class="nav-item-link">Registration</a>
+        <a href="login.html" class="nav-item-link" style="color:var(--text-light); margin-left:8px;">Logout</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content" style="max-width: 960px;">
+    
+    <div class="page-intro" style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:12px;">
+      <div>
+        <div style="font-size:0.8rem; font-weight:700; color:var(--sage); text-transform:uppercase; letter-spacing:0.04em;">
+          AI Decision Support
+        </div>
+        <h1 class="page-title">Plot-Specific Irrigation Advisory</h1>
+        <p class="page-subtitle">
+          Scientific water scheduling based on field telemetry, crop physiology, and local weather forecasts.
+        </p>
+      </div>
+
+      <div style="display:flex; align-items:center; gap:8px;">
+        <span style="font-size:0.8rem; color:var(--text-muted); font-weight:600;">Active Plot:</span>
+        <select id="advisoryPlotSelector" style="padding:6px 12px; border-radius:var(--radius-sm); border:1px solid var(--border); background:var(--white); font-weight:600; color:var(--forest-dark);">
+          <option value="plot-a">Plot A (2.4 Ac) &bull; Grand Growth</option>
+          <option value="plot-b">Plot B (1.8 Ac) &bull; Grand Growth</option>
+          <option value="plot-c">Plot C (3.1 Ac) &bull; Tillering</option>
+          <option value="plot-d">Plot D (2.0 Ac) &bull; Maturity</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Main Recommendation Card Container -->
+    <div id="advisoryMainCardContainer" style="margin-bottom: 24px;">
+      <!-- Injected via js/advisory.js -->
+    </div>
+
+    <!-- "Why This Recommendation?" (4 Factors) -->
+    <div id="advisoryWhyContainer" style="margin-bottom: 24px;">
+      <!-- Injected via js/advisory.js -->
+    </div>
+
+    <!-- Human-in-the-Loop Concept Banner -->
+    <div class="card" style="background:var(--forest-subtle); border-color:#c8e0d1;">
+      <div style="display:flex; gap:12px; align-items:flex-start;">
+        <i data-lucide="shield-check" style="width:20px; height:20px; color:var(--forest); flex-shrink:0; margin-top:2px;"></i>
+        <div style="font-size:0.85rem; color:var(--forest-dark); line-height:1.5;">
+          <strong>Human-in-the-Loop Principle (Case Study KJS-AGR-01):</strong><br>
+          The AI model provides explainable, data-backed guidance to eliminate guesswork. However, the final authority remains with the farmer. Ramesh can accept the recommended schedule, customize the pumping duration to match local canal water release, or override recommendations if unexpected conditions occur.
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div style="max-width:1180px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+      <div><strong>SUGARCANE360</strong> &bull; SY Web Dev Lab Mini Project</div>
+      <div>Case Study: <em>KJS-AGR-01</em></div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/advisory.js"></script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather &amp; Forecast — SUGARCANE360</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="dashboard.html" class="brand-link">
+        <span class="brand-sprout">🌱</span>
+        <span>SUGARCANE360</span>
+      </a>
+      <button class="hamburger-btn" id="navToggleBtn" aria-label="Toggle Navigation">
+        <i data-lucide="menu"></i>
+      </button>
+      <nav class="nav-links-menu" id="navLinksMenu">
+        <a href="dashboard.html" class="nav-item-link">Dashboard</a>
+        <a href="plots.html" class="nav-item-link">My Plots</a>
+        <a href="advisory.html" class="nav-item-link">Advisory</a>
+        <a href="weather.html" class="nav-item-link active">Weather</a>
+        <a href="sensors.html" class="nav-item-link">Sensors</a>
+        <a href="crop-health.html" class="nav-item-link">Crop Health</a>
+        <a href="fertigation.html" class="nav-item-link">Fertigation</a>
+        <a href="analytics.html" class="nav-item-link">Analytics</a>
+        <a href="pump.html" class="nav-item-link">Pump</a>
+        <a href="alerts.html" class="nav-item-link">Alerts <span class="alert-dot-badge">2</span></a>
+        <a href="assistant.html" class="nav-item-link">AI Assistant</a>
+        <a href="registration.html" class="nav-item-link">Registration</a>
+        <a href="login.html" class="nav-item-link" style="color:var(--text-light); margin-left:8px;">Logout</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content" style="max-width: 980px;">
+    
+    <div class="page-intro">
+      <div style="font-size:0.8rem; font-weight:700; color:var(--sage); text-transform:uppercase; letter-spacing:0.04em;">
+        Agrometeorological Intelligence
+      </div>
+      <h1 class="page-title">Weather Information &amp; 7-Day Forecast</h1>
+      <p class="page-subtitle">
+        Local weather feeds for Kolhapur, Maharashtra and their automated impact on sugarcane irrigation scheduling.
+      </p>
+    </div>
+
+    <!-- Current Weather Snapshot (4 Cards) -->
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:12px; margin-bottom:24px;">
+      <div class="card card-sm">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <span style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Temperature</span>
+          <i data-lucide="thermometer" style="width:16px; height:16px; color:var(--yellow);"></i>
+        </div>
+        <div class="status-stat-val">29°C</div>
+        <div class="status-stat-sub">Day High: 31°C &bull; Low: 22°C</div>
+      </div>
+
+      <div class="card card-sm">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <span style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Rain Probability</span>
+          <i data-lucide="cloud-rain" style="width:16px; height:16px; color:var(--status-info);"></i>
+        </div>
+        <div class="status-stat-val" style="color:var(--status-info);">20%</div>
+        <div class="status-stat-sub">Expected Rain: 0.0 mm</div>
+      </div>
+
+      <div class="card card-sm">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <span style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Relative Humidity</span>
+          <i data-lucide="droplet" style="width:16px; height:16px; color:var(--sage);"></i>
+        </div>
+        <div class="status-stat-val">68%</div>
+        <div class="status-stat-sub">Moderate Evaporation Rate</div>
+      </div>
+
+      <div class="card card-sm">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <span style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Wind Speed</span>
+          <i data-lucide="wind" style="width:16px; height:16px; color:var(--forest);"></i>
+        </div>
+        <div class="status-stat-val">12 km/h</div>
+        <div class="status-stat-sub">West-Southwest Breeze</div>
+      </div>
+    </div>
+
+    <!-- Impact on Irrigation Card -->
+    <div class="card" style="border-left:5px solid var(--forest); margin-bottom:24px; padding:22px;">
+      <h2 style="font-size:1.15rem; color:var(--forest-dark); margin-bottom:6px;">
+        How Weather Directs Irrigation Schedules (Case Study KJS-AGR-01)
+      </h2>
+      <p style="font-size:0.88rem; color:var(--text-main); line-height:1.5; margin-bottom:14px;">
+        In traditional farming, pumps are turned on based on habit even when rainfall is imminent, causing water waste, energy expense, and waterlogging. SUGARCANE360 prevents this by factoring incoming precipitation:
+      </p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:12px;">
+        <div style="background:var(--cream); padding:12px 14px; border-radius:var(--radius-sm); border:1px solid var(--border-light);">
+          <div style="font-weight:700; color:var(--forest-dark); font-size:0.88rem; margin-bottom:3px;">
+            ☀️ Low Rain Probability (&lt;30%)
+          </div>
+          <div style="font-size:0.8rem; color:var(--text-muted); line-height:1.4;">
+            Scheduled irrigation proceeds normally based on soil moisture depletion.
+          </div>
+        </div>
+        <div style="background:#eaf4f9; padding:12px 14px; border-radius:var(--radius-sm); border:1px solid #bce1f5;">
+          <div style="font-weight:700; color:#185375; font-size:0.88rem; margin-bottom:3px;">
+            🌧️ Significant Rainfall (>50% or &ge;10mm)
+          </div>
+          <div style="font-size:0.8rem; color:#226085; line-height:1.4;">
+            Pumping duration is automatically reduced or postponed (e.g. Saturday 14mm rain event triggers irrigation hold).
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7-Day Forecast Grid -->
+    <div class="card" style="margin-bottom:24px;">
+      <div class="card-title-row">
+        <div>
+          <h2 style="font-size:1.1rem; color:var(--forest-dark); font-weight:700;">
+            7-Day Agrometeorological Forecast (Kolhapur)
+          </h2>
+          <p style="font-size:0.8rem; margin-top:2px;">Continuously evaluated by the irrigation advisory engine.</p>
+        </div>
+        <span class="badge badge-good">Station: Kolhapur Agri Met</span>
+      </div>
+
+      <div id="weatherForecastTable">
+        <!-- Rendered via js/weather.js -->
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div style="max-width:1180px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+      <div><strong>SUGARCANE360</strong> &bull; SY Web Dev Lab Mini Project</div>
+      <div>Case Study: <em>KJS-AGR-01</em></div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/weather.js"></script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pump Operations &amp; Scheduling — SUGARCANE360</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Top Utility Header -->
+  <div class="top-utility-bar">
+    <div class="top-utility-container">
+      <div class="top-utility-text">
+        Welcome To SugarMart & SUGARCANE360 e-Procurement Portal &nbsp;|&nbsp; 📞 Toll Free: +91-8956132095 (9.30 AM to 05.30 PM, Mon-Fri)
+      </div>
+      <div class="top-utility-actions">
+        <a href="registration.html" class="top-btn">Factory Registration</a>
+        <a href="registration.html" class="top-btn">Supplier Registration</a>
+        <a href="login.html" class="top-btn top-btn-solid">Login</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-link">
+        <span class="brand-box-logo">SUGARCANE360</span>
+      </a>
+      <button class="hamburger-btn" id="navToggleBtn" aria-label="Toggle Navigation">
+        ☰ MENU
+      </button>
+      <nav class="nav-links-menu" id="navLinksMenu">
+        <a href="index.html" class="nav-item-link">Home</a>
+        <a href="dashboard.html" class="nav-item-link">Dashboard</a>
+        <a href="plots.html" class="nav-item-link">My Plots</a>
+        <a href="advisory.html" class="nav-item-link">Advisory</a>
+        <a href="weather.html" class="nav-item-link">Weather</a>
+        <a href="sensors.html" class="nav-item-link">Sensors</a>
+        <a href="crop-health.html" class="nav-item-link">Crop Health</a>
+        <a href="fertigation.html" class="nav-item-link">Fertigation</a>
+        <a href="analytics.html" class="nav-item-link">Analytics</a>
+        <a href="pump.html" class="nav-item-link active">Pump Control</a>
+        <a href="alerts.html" class="nav-item-link">Alerts <span class="alert-dot-badge">2</span></a>
+        <a href="assistant.html" class="nav-item-link">AI Helpdesk</a>
+        <a href="registration.html" class="nav-item-link">Registration</a>
+        <a href="login.html" class="nav-item-link" style="background:#d9534f; color:#fff;">Logout</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Blue Header Banner -->
+  <div class="page-blue-banner">
+    <div class="banner-container">
+      <h1>PUMP OPERATIONS &amp; AUTOMATION SCHEDULER</h1>
+      <p>Rural 3-Phase Power Synchronized Remote Motor Pump Controls</p>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    
+    <div class="portal-layout-grid">
+
+      <!-- Left Sidebar Navigation Panel -->
+      <aside class="portal-sidebar">
+        <div class="portal-sidebar-title">PUMP CONTROL MENU</div>
+        <a href="pump.html" class="sidebar-nav-btn active">Pump Motors Fleet</a>
+        <a href="advisory.html" class="sidebar-nav-btn">Plot Irrigation Advisory</a>
+        <a href="sensors.html" class="sidebar-nav-btn">Soil Telemetry</a>
+        <a href="dashboard.html" class="sidebar-nav-btn">Farmer Dashboard</a>
+      </aside>
+
+      <!-- Right Content Area -->
+      <section>
+
+        <!-- Power Grid Availability Alert -->
+        <div class="card" style="border-left:5px solid #0056b3; background:#e6f0fa; margin-bottom:20px;">
+          <div style="font-weight:bold; color:#003366; font-size:1rem;">
+            ⚡ Kolhapur Rural Grid Status (3-Phase Agricultural Power Available)
+          </div>
+          <div style="font-size:0.95rem; color:#333333; margin-top:4px;">
+            Current Window: <strong>06:00 AM – 02:00 PM (ACTIVE NOW)</strong> &bull; Evening Window: <strong>04:00 PM – 10:00 PM</strong>.
+            Schedules are automatically mapped within energization hours.
+          </div>
+        </div>
+
+        <!-- 2 Pump Operation Cards -->
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:20px; margin-bottom:20px;">
+          
+          <!-- Pump 01 -->
+          <div class="card" style="border-left:5px solid #0056b3;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; border-bottom:2px solid #0056b3; padding-bottom:6px;">
+              <div>
+                <h2 style="font-size:1.3rem; color:#003366;">PUMP 01 (BOREWELL SUBMERSIBLE)</h2>
+                <div style="font-size:0.85rem; color:#555555;">Rating: 5.0 HP &bull; Serving Plots A &amp; B</div>
+              </div>
+              <span class="badge badge-good">Standby (Ready)</span>
+            </div>
+
+            <div style="background:#f8f9fa; padding:14px; border:1px solid #cccccc; font-size:0.95rem; line-height:1.6; margin-bottom:16px;">
+              <div>Associated Field: <strong>Plot A (2.4 Acres)</strong></div>
+              <div>Scheduled Runtime: <strong>Tomorrow, 6:00 AM – 8:30 AM</strong></div>
+              <div>Duration: <strong>2.5 hours</strong></div>
+              <div>Target Volume: <strong>7,500 Liters</strong></div>
+              <div>Dry Run Sensor: <strong>OK (Protected)</strong></div>
+            </div>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+              <button class="btn btn-primary btn-sm" onclick="showToast('PUMP 01 schedule confirmed for 6:00 AM.', 'info')">
+                CONFIRM SCHEDULE
+              </button>
+              <button class="btn btn-secondary btn-sm" onclick="showToast('Simulating 15-second diagnostic on Pump 01...', 'info')">
+                TEST RUN (SIMULATED)
+              </button>
+            </div>
+          </div>
+
+          <!-- Pump 02 -->
+          <div class="card" style="border-left:5px solid #d9534f;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; border-bottom:2px solid #0056b3; padding-bottom:6px;">
+              <div>
+                <h2 style="font-size:1.3rem; color:#003366;">PUMP 02 (CANAL LIFT SYSTEM)</h2>
+                <div style="font-size:0.85rem; color:#555555;">Rating: 7.5 HP &bull; Serving Plots C &amp; D</div>
+              </div>
+              <span class="badge badge-warn">Scheduled Today</span>
+            </div>
+
+            <div style="background:#f8f9fa; padding:14px; border:1px solid #cccccc; font-size:0.95rem; line-height:1.6; margin-bottom:16px;">
+              <div>Associated Field: <strong>Plot C (3.1 Acres — High Deficit)</strong></div>
+              <div>Scheduled Runtime: <strong>Today, 4:30 PM – 7:45 PM</strong></div>
+              <div>Duration: <strong>3.25 hours</strong></div>
+              <div>Target Volume: <strong>9,800 Liters</strong></div>
+              <div>Canal Sensor: <strong>Inflow Confirmed</strong></div>
+            </div>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+              <button class="btn btn-secondary btn-sm" onclick="showToast('Pump 02 cycle paused by farmer.', 'warn')">
+                PAUSE CYCLE
+              </button>
+              <a href="advisory.html?plot=plot-c" class="btn btn-outline btn-sm">
+                PLOT C ADVISORY &rarr;
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div style="max-width:1240px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+      <div><strong>SUGARCANE360</strong> &bull; Single e-Procurement B2B Platform & Irrigation System</div>
+      <div>Case Study: <em>KJS-AGR-01 &bull; Kolhapur, Maharashtra</em></div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

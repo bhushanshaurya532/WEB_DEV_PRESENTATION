@@ -1,0 +1,472 @@
+/* ==========================================================================
+   SUGARCANE360 — Master Stylesheet
+   Minimal, Pretty, Modern, Professional, Farmer-Friendly
+   Case Study: KJS-AGR-01 (SY Web Dev Lab Prototype)
+   ========================================================================== */
+
+:root {
+  /* Palette */
+  --forest: #1b4332;
+  --forest-dark: #122f23;
+  --forest-light: #2d6a4f;
+  --forest-subtle: #edf5f0;
+
+  --sage: #40916c;
+  --sage-light: #74c69d;
+  --sage-subtle: #f0f7f3;
+
+  --cream: #faf8f5;
+  --white: #ffffff;
+  --border: #e8e4dc;
+  --border-light: #f0ede6;
+
+  --yellow: #d4a373;
+  --yellow-bg: #fdfaf3;
+  --yellow-border: #eddabf;
+
+  --status-good: #2a7a4c;
+  --status-good-bg: #eaf5ee;
+  --status-warn: #b56b18;
+  --status-warn-bg: #fdf5ea;
+  --status-danger: #b33939;
+  --status-danger-bg: #fbeeed;
+  --status-info: #216f94;
+  --status-info-bg: #eaf4f9;
+
+  --text-main: #1c2820;
+  --text-muted: #6e7d73;
+  --text-light: #8e9e94;
+
+  --shadow-sm: 0 1px 3px rgba(27, 67, 50, 0.05);
+  --shadow-md: 0 4px 12px rgba(27, 67, 50, 0.07);
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-full: 9999px;
+}
+
+/* Reset & Base with Static Sugarcane PNG Cursor */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  cursor: url('sugarcane.png') 4 4, url('sugarcane.svg') 4 4, auto !important;
+}
+
+a, button, input[type="submit"], input[type="button"], input[type="reset"], select, .btn, .plot-cell, .chip-btn, [role="button"], .nav-item-link {
+  cursor: url('sugarcane.png') 4 4, url('sugarcane.svg') 4 4, pointer !important;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--cream);
+  color: var(--text-main);
+  line-height: 1.55;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--forest);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--forest-dark);
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 0.92rem;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+  color: var(--forest-dark);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+h1 { font-size: clamp(1.6rem, 2.5vw, 2.1rem); }
+h2 { font-size: clamp(1.25rem, 1.8vw, 1.5rem); }
+h3 { font-size: 1.1rem; }
+h4 { font-size: 0.95rem; }
+
+p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+/* ==========================================================================
+   Navigation (Clean Top Navigation — No Giant Desktop Sidebar)
+   ========================================================================== */
+.site-header {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--forest-dark);
+  letter-spacing: -0.01em;
+}
+
+.brand-sprout {
+  font-size: 1.3rem;
+  display: inline-block;
+}
+
+.nav-links-menu {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-item-link {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-item-link:hover {
+  color: var(--forest);
+  background: var(--cream);
+}
+
+.nav-item-link.active {
+  color: var(--forest);
+  background: var(--forest-subtle);
+  font-weight: 700;
+}
+
+.alert-dot-badge {
+  font-size: 0.68rem;
+  padding: 1px 5px;
+  background: var(--status-warn);
+  color: #fff;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+}
+
+.hamburger-btn {
+  display: none;
+  padding: 8px;
+  color: var(--forest-dark);
+}
+
+/* ==========================================================================
+   Layout & Container
+   ========================================================================== */
+.main-content {
+  flex: 1;
+  max-width: 1180px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+}
+
+/* Section Header (calm, whitespace) */
+.page-intro {
+  margin-bottom: 28px;
+}
+
+.page-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--forest-dark);
+}
+
+.page-subtitle {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* ==========================================================================
+   Cards & Grid Components
+   ========================================================================== */
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 22px;
+}
+
+.card-sm {
+  padding: 16px;
+}
+
+.card-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 9px 16px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  transition: all 0.15s ease;
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  background: var(--forest);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background: var(--forest-dark);
+  color: #ffffff;
+}
+
+.btn-secondary {
+  background: var(--white);
+  color: var(--forest-dark);
+  border-color: var(--border);
+}
+
+.btn-secondary:hover {
+  background: var(--cream);
+  border-color: var(--sage);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--forest);
+  border-color: var(--forest);
+}
+
+.btn-outline:hover {
+  background: var(--forest-subtle);
+}
+
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 0.8rem;
+}
+
+.btn-lg {
+  padding: 12px 24px;
+  font-size: 0.95rem;
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+}
+
+.badge-good { background: var(--status-good-bg); color: var(--status-good); }
+.badge-warn { background: var(--status-warn-bg); color: var(--status-warn); }
+.badge-danger { background: var(--status-danger-bg); color: var(--status-danger); }
+.badge-info { background: var(--status-info-bg); color: var(--status-info); }
+.badge-neutral { background: var(--cream); color: var(--text-muted); border: 1px solid var(--border); }
+
+.tag-simulated {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #8c5a21;
+  background: #fdf5ea;
+  border: 1px solid #eddabf;
+  padding: 2px 7px;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Notice Box */
+.notice-box {
+  background: var(--yellow-bg);
+  border: 1px solid var(--yellow-border);
+  border-left: 3px solid var(--yellow);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  margin-top: 24px;
+  font-size: 0.8rem;
+  color: #614a2a;
+  line-height: 1.45;
+}
+
+/* Form inputs */
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--forest-dark);
+  margin-bottom: 6px;
+}
+
+.form-input, .form-select {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  color: var(--text-main);
+  outline: none;
+}
+
+.form-input:focus, .form-select:focus {
+  border-color: var(--forest);
+  box-shadow: 0 0 0 2px rgba(27, 67, 50, 0.1);
+}
+
+/* Toast */
+.toast-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  pointer-events: none;
+}
+
+.toast {
+  pointer-events: auto;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--forest);
+  box-shadow: var(--shadow-md);
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  border-radius: var(--radius-sm);
+  max-width: 340px;
+}
+
+/* Modal */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(18, 47, 35, 0.35);
+  backdrop-filter: blur(2px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-box {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+  max-width: 440px;
+  width: 100%;
+  padding: 22px;
+}
+
+.modal-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+/* Site Footer */
+.site-footer {
+  background: var(--white);
+  border-top: 1px solid var(--border);
+  padding: 24px 20px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: auto;
+}
+
+/* ==========================================================================
+   Responsive Navigation & Layout (<= 992px)
+   ========================================================================== */
+@media (max-width: 992px) {
+  .hamburger-btn {
+    display: inline-flex;
+  }
+
+  .nav-links-menu {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    padding: 12px 20px;
+    gap: 4px;
+    box-shadow: var(--shadow-md);
+  }
+
+  .nav-links-menu.open {
+    display: flex;
+  }
+
+  .nav-item-link {
+    width: 100%;
+    padding: 9px 12px;
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fertigation Advisory — SUGARCANE360</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="dashboard.html" class="brand-link">
+        <span class="brand-sprout">🌱</span>
+        <span>SUGARCANE360</span>
+      </a>
+      <button class="hamburger-btn" id="navToggleBtn" aria-label="Toggle Navigation">
+        <i data-lucide="menu"></i>
+      </button>
+      <nav class="nav-links-menu" id="navLinksMenu">
+        <a href="dashboard.html" class="nav-item-link">Dashboard</a>
+        <a href="plots.html" class="nav-item-link">My Plots</a>
+        <a href="advisory.html" class="nav-item-link">Advisory</a>
+        <a href="weather.html" class="nav-item-link">Weather</a>
+        <a href="sensors.html" class="nav-item-link">Sensors</a>
+        <a href="crop-health.html" class="nav-item-link">Crop Health</a>
+        <a href="fertigation.html" class="nav-item-link active">Fertigation</a>
+        <a href="analytics.html" class="nav-item-link">Analytics</a>
+        <a href="pump.html" class="nav-item-link">Pump</a>
+        <a href="alerts.html" class="nav-item-link">Alerts <span class="alert-dot-badge">2</span></a>
+        <a href="assistant.html" class="nav-item-link">AI Assistant</a>
+        <a href="registration.html" class="nav-item-link">Registration</a>
+        <a href="login.html" class="nav-item-link" style="color:var(--text-light); margin-left:8px;">Logout</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content" style="max-width: 980px;">
+    
+    <div class="page-intro" style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:12px;">
+      <div>
+        <div style="font-size:0.8rem; font-weight:700; color:var(--sage); text-transform:uppercase; letter-spacing:0.04em;">
+          Precision Nutrient Management
+        </div>
+        <h1 class="page-title">Fertigation Guidance</h1>
+        <p class="page-subtitle">
+          Synchronizing nutrient delivery with irrigation schedules to prevent fertilizer runoff and maximize cane uptake.
+        </p>
+      </div>
+
+      <div style="display:flex; align-items:center; gap:8px;">
+        <span style="font-size:0.8rem; color:var(--text-muted); font-weight:600;">Select Plot:</span>
+        <select id="fertPlotSelect" style="padding:6px 12px; border-radius:var(--radius-sm); border:1px solid var(--border); background:var(--white); font-weight:600; color:var(--forest-dark);">
+          <option value="plot-a">Plot A (2.4 Ac) &bull; Grand Growth</option>
+          <option value="plot-b">Plot B (1.8 Ac) &bull; Grand Growth</option>
+          <option value="plot-c">Plot C (3.1 Ac) &bull; Tillering</option>
+          <option value="plot-d">Plot D (2.0 Ac) &bull; Maturity</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Fertigation Parameter Cards -->
+    <div class="card" style="border-left:5px solid var(--forest); margin-bottom:24px; padding:24px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; flex-wrap:wrap; gap:10px;">
+        <h2 style="font-size:1.2rem; color:var(--forest-dark); font-weight:800;" id="fertPlotTitle">
+          Plot A (2.4 Acres) — Fertigation Schedule
+        </h2>
+        <span class="badge badge-good" id="fertTimingBadge">Window Active</span>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:12px; margin-bottom:18px;">
+        <div style="background:var(--cream); padding:12px; border-radius:var(--radius-sm); border:1px solid var(--border-light);">
+          <div style="font-size:0.7rem; color:var(--text-muted); font-weight:700; text-transform:uppercase;">Crop Stage</div>
+          <div style="font-size:1.05rem; font-weight:800; color:var(--forest-dark); margin-top:2px;" id="fertStageVal">
+            Grand Growth
+          </div>
+        </div>
+
+        <div style="background:var(--cream); padding:12px; border-radius:var(--radius-sm); border:1px solid var(--border-light);">
+          <div style="font-size:0.7rem; color:var(--text-muted); font-weight:700; text-transform:uppercase;">Soil Texture &amp; Moisture</div>
+          <div style="font-size:1.05rem; font-weight:800; color:var(--forest-dark); margin-top:2px;" id="fertSoilVal">
+            Sandy Loam &bull; 42%
+          </div>
+        </div>
+
+        <div style="background:var(--cream); padding:12px; border-radius:var(--radius-sm); border:1px solid var(--border-light);">
+          <div style="font-size:0.7rem; color:var(--text-muted); font-weight:700; text-transform:uppercase;">Fertigation Timing</div>
+          <div style="font-size:1.05rem; font-weight:800; color:var(--forest); margin-top:2px;" id="fertTimingVal">
+            Tomorrow 6:00 AM
+          </div>
+        </div>
+
+        <div style="background:var(--cream); padding:12px; border-radius:var(--radius-sm); border:1px solid var(--border-light);">
+          <div style="font-size:0.7rem; color:var(--text-muted); font-weight:700; text-transform:uppercase;">Application Method</div>
+          <div style="font-size:1.05rem; font-weight:800; color:var(--forest-dark); margin-top:2px;">
+            Venturi Injector / Drip
+          </div>
+        </div>
+      </div>
+
+      <!-- Core Guidance Banner -->
+      <div style="background:var(--forest-subtle); border:1px solid #cce3d5; border-radius:var(--radius-sm); padding:16px; margin-bottom:16px;">
+        <div style="font-weight:800; color:var(--forest-dark); font-size:0.95rem; margin-bottom:4px;">
+          💧 Recommendation: Fertigation Window Aligned with Next Irrigation
+        </div>
+        <div style="font-size:0.88rem; color:var(--forest-dark); line-height:1.5;" id="fertAdvisoryText">
+          For Plot A, inject water-soluble fertilizer (NPK 19:19:19 + Potassium booster) during the middle 60 minutes of tomorrow's 2.5-hour morning irrigation run.
+        </div>
+      </div>
+
+      <!-- Rationale -->
+      <div style="font-size:0.84rem; color:var(--text-muted); line-height:1.5;">
+        <strong>Scientific Rationale (KJS-AGR-01):</strong> Supplying nutrients when soil pores are pre-wetted enhances capillary uptake by root hairs while preventing direct chemical burn or deep percolation leaching beyond the root zone.
+      </div>
+    </div>
+
+    <!-- Fertigation History Table -->
+    <div class="card">
+      <div class="card-title-row">
+        <div>
+          <h2 style="font-size:1.1rem; color:var(--forest-dark); font-weight:700;">Recent Fertigation Cycles</h2>
+          <p style="font-size:0.8rem; margin-top:2px;">Completed nutrient runs recorded across plots.</p>
+        </div>
+        <span class="badge badge-info">Historical Log</span>
+      </div>
+
+      <div style="overflow-x:auto;">
+        <table style="width:100%; border-collapse:collapse; font-size:0.85rem; text-align:left;">
+          <thead>
+            <tr style="border-bottom:1px solid var(--border); color:var(--text-muted);">
+              <th style="padding:10px 8px;">Date</th>
+              <th style="padding:10px 8px;">Plot</th>
+              <th style="padding:10px 8px;">Nutrient Formulation</th>
+              <th style="padding:10px 8px;">Quantity</th>
+              <th style="padding:10px 8px;">Water Volume</th>
+              <th style="padding:10px 8px;">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border-light);">
+              <td style="padding:10px 8px; font-weight:600;">14 Oct 2024</td>
+              <td style="padding:10px 8px;">Plot B (1.8 Ac)</td>
+              <td style="padding:10px 8px;">Urea + MOP (0:0:50)</td>
+              <td style="padding:10px 8px;">15 kg</td>
+              <td style="padding:10px 8px;">4,800 L</td>
+              <td style="padding:10px 8px;"><span class="badge badge-good">Completed</span></td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border-light);">
+              <td style="padding:10px 8px; font-weight:600;">11 Oct 2024</td>
+              <td style="padding:10px 8px;">Plot A (2.4 Ac)</td>
+              <td style="padding:10px 8px;">Water-soluble 19:19:19</td>
+              <td style="padding:10px 8px;">20 kg</td>
+              <td style="padding:10px 8px;">6,200 L</td>
+              <td style="padding:10px 8px;"><span class="badge badge-good">Completed</span></td>
+            </tr>
+            <tr>
+              <td style="padding:10px 8px; font-weight:600;">07 Oct 2024</td>
+              <td style="padding:10px 8px;">Plot C (3.1 Ac)</td>
+              <td style="padding:10px 8px;">Micronutrient Mix (Fe, Zn)</td>
+              <td style="padding:10px 8px;">5 kg</td>
+              <td style="padding:10px 8px;">7,900 L</td>
+              <td style="padding:10px 8px;"><span class="badge badge-good">Completed</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div style="max-width:1180px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+      <div><strong>SUGARCANE360</strong> &bull; SY Web Dev Lab Mini Project</div>
+      <div>Case Study: <em>KJS-AGR-01</em></div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const select = document.getElementById("fertPlotSelect");
+      if (select) {
+        select.value = AppState.getSelectedPlotId();
+        select.onchange = (e) => {
+          AppState.setSelectedPlotId(e.target.value);
+          renderFertPage();
+        };
+      }
+
+      renderFertPage();
+      window.addEventListener("sugarcane:plot-selected", () => {
+        if (select) select.value = AppState.getSelectedPlotId();
+        renderFertPage();
+      });
+    });
+
+    function renderFertPage() {
+      const plot = AppState.getSelectedPlot();
+      document.getElementById("fertPlotTitle").textContent = `${plot.name} (${plot.area}) — Fertigation Schedule`;
+      document.getElementById("fertStageVal").textContent = plot.stage;
+      document.getElementById("fertSoilVal").textContent = `${plot.soilType} • ${plot.soilMoisture}% moisture`;
+      document.getElementById("fertTimingVal").textContent = plot.fertigationTiming;
+      document.getElementById("fertAdvisoryText").textContent = `“Fertigation window aligned with the next irrigation.” For ${plot.name}, inject recommended nutrients during the middle period of the ${plot.nextIrrigation.duration} scheduled watering cycle.`;
+      initIcons();
+    }
+  </script>
+</body>
+</html>
