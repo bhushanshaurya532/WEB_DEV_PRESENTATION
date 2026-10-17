@@ -1,40 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Irrigation Advisory</title>
-    <link rel="stylesheet" href="agro.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Irrigation Advisory — SUGARCANE360</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-    <nav class="nav-header">
-        <a href="registration.html" class="nav-link">Task 6: Registration Form</a>
-        <a href="task.html" class="nav-link">Experiment 5 Tasks (1-6)</a>
-        <a href="advisory.html" class="nav-link active">Task 2: Advisory</a>
-        <a href="irrigation-table.html" class="nav-link">Task 3: Data Table</a>
-        <a href="weather.html" class="nav-link">Task 4: Weather</a>
-        <a href="farm-info.html" class="nav-link">Task 6: Farm Info</a>
-    </nav>
 
-    <div class="irrigation_id">
-        <h2>Sugarcane Field Irrigation Recommendation</h2>
-        <hr>
-        <div class="advisory-item">
-            <p><strong>Plot ID:</strong> <small>239408732</small></p>
-        </div>
-        <div class="advisory-item">
-            <p><strong>Farmer Name:</strong> <em>Thiago C.</em></p>
-        </div>
-        <div class="advisory-item">
-            <p><strong>Soil Moisture:</strong> <mark>Moist</mark></p>
-        </div>
-        <div class="advisory-item">
-            <p><strong>Recommended Irrigation Duration:</strong> 0 Hours (Sufficient Moisture)</p>
-        </div>
-        <div class="advisory-item">
-            <p><strong>Water Stress Level:</strong> Low</p>
-        </div>
-        <hr>
+  <!-- Top Utility Header -->
+  <div class="top-utility-bar">
+    <div class="top-utility-container">
+      <div class="top-utility-text">
+        Welcome To SugarMart & SUGARCANE360 e-Procurement Portal &nbsp;|&nbsp; 📞 Toll Free: +91-8956132095 (9.30 AM to 05.30 PM, Mon-Fri)
+      </div>
+      <div class="top-utility-actions">
+        <a href="registration.html" class="top-btn">Factory Registration</a>
+        <a href="registration.html" class="top-btn">Supplier Registration</a>
+        <a href="login.html" class="top-btn top-btn-solid">Login</a>
+      </div>
     </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-link">
+        <span class="brand-box-logo">SUGARCANE360</span>
+      </a>
+      <button class="hamburger-btn" id="navToggleBtn" aria-label="Toggle Navigation">
+        ☰ MENU
+      </button>
+      <nav class="nav-links-menu" id="navLinksMenu">
+        <a href="index.html" class="nav-item-link">Home</a>
+        <a href="dashboard.html" class="nav-item-link">Dashboard</a>
+        <a href="plots.html" class="nav-item-link">My Plots</a>
+        <a href="advisory.html" class="nav-item-link active">Advisory</a>
+        <a href="weather.html" class="nav-item-link">Weather</a>
+        <a href="sensors.html" class="nav-item-link">Sensors</a>
+        <a href="crop-health.html" class="nav-item-link">Crop Health</a>
+        <a href="fertigation.html" class="nav-item-link">Fertigation</a>
+        <a href="analytics.html" class="nav-item-link">Analytics</a>
+        <a href="pump.html" class="nav-item-link">Pump Control</a>
+        <a href="alerts.html" class="nav-item-link">Alerts <span class="alert-dot-badge">2</span></a>
+        <!-- <a href="assistant.html" class="nav-item-link">AI Helpdesk</a> -->
+        <a href="registration.html" class="nav-item-link">Registration</a>
+        <a href="login.html" class="nav-item-link" style="background:#d9534f; color:#fff;">Logout</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Blue Header Banner -->
+  <div class="page-blue-banner">
+    <div class="banner-container">
+      <h1>PLOT-SPECIFIC IRRIGATION ADVISORY</h1>
+      <p>Scientific Water Scheduling & Evapotranspiration Decision Engine</p>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="main-content">
+
+    <div class="portal-layout-grid">
+
+      <!-- Left Sidebar Navigation Panel -->
+      <aside class="portal-sidebar">
+        <div class="portal-sidebar-title">ADVISORY MODULES</div>
+        <a href="advisory.html" class="sidebar-nav-btn active">AI Plot Advisory Engine</a>
+        <a href="plots.html" class="sidebar-nav-btn">Inspect Field Plots</a>
+        <a href="weather.html" class="sidebar-nav-btn">Rainfall & Weather Forecast</a>
+        <a href="sensors.html" class="sidebar-nav-btn">Soil Moisture Telemetry</a>
+        <a href="pump.html" class="sidebar-nav-btn">Pump Remote Automation</a>
+      </aside>
+
+      <!-- Main Content Area -->
+      <section>
+        
+        <div class="card" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:20px;">
+          <div>
+            <h2 style="font-size:1.4rem; color:#003366; margin:0;">SELECT TARGET FARM PLOT:</h2>
+          </div>
+          <div>
+            <select id="advisoryPlotSelector" style="padding:10px 16px; font-weight:bold; font-size:1rem; border:2px solid #0056b3; background:#ffffff; color:#003366;">
+              <option value="plot-a">Plot A (2.4 Ac) &bull; Grand Growth</option>
+              <option value="plot-b">Plot B (1.8 Ac) &bull; Grand Growth</option>
+              <option value="plot-c">Plot C (3.1 Ac) &bull; Tillering</option>
+              <option value="plot-d">Plot D (2.0 Ac) &bull; Maturity</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Main Recommendation Card Container -->
+        <div id="advisoryMainCardContainer" style="margin-bottom: 20px;">
+          <!-- Injected via js/advisory.js -->
+        </div>
+
+        <!-- "Why This Recommendation?" (4 Factors) -->
+        <div id="advisoryWhyContainer" style="margin-bottom: 20px;">
+          <!-- Injected via js/advisory.js -->
+        </div>
+
+        <!-- Human-in-the-Loop Concept Banner -->
+        <div class="card" style="background:#e6f0fa; border:2px solid #0056b3;">
+          <div style="font-size:1rem; color:#003366; line-height:1.6;">
+            <strong>Human-in-the-Loop Principle (Case Study KJS-AGR-01):</strong><br>
+            The AI model provides explainable, data-backed guidance to eliminate guesswork. However, the final authority remains with the farmer. Ramesh can accept the recommended schedule, customize the pumping duration to match local canal water release, or override recommendations if unexpected conditions occur.
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div style="max-width:1240px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+      <div><strong>SUGARCANE360</strong> &bull; Single e-Procurement B2B Platform & Irrigation System</div>
+      <div>Case Study: <em>KJS-AGR-01 &bull; Kolhapur, Maharashtra</em></div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/advisory.js"></script>
 </body>
 </html>

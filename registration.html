@@ -1,320 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Farmer Registration</title>
-    <link rel="stylesheet" href="agro.css">
-    <script src="registration.js"></script>
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suppliers & Farmers Registration — SUGARCANE360</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-    <nav class="nav-header">
-        <a href="registration.html" class="nav-link active">Task 1: Registration</a>
-        <a href="advisory.html" class="nav-link">Task 2: Advisory</a>
-        <a href="irrigation-table.html" class="nav-link">Task 3: Data Table</a>
-        <a href="weather.html" class="nav-link">Task 4: Weather</a>
-        <a href="plot-map.html" class="nav-link">Task 5: Plot Map</a>
-        <a href="farm-info.html" class="nav-link">Task 6: Farm Info</a>
-        <a href="gall.html" class="nav-link">Task 7: Gallery</a>
-        <a href="media.html" class="nav-link">Task 8: Media Center</a>
-    </nav>
 
-    <div class="container">
-        <h2>Farmer Registration Form</h2>
-        <hr>
-        <div id="successBanner" class="success-message" style="display: none;"></div>
-
-        <form id="farmerForm" action="/submit" method="post" enctype="multipart/form-data" novalidate>
-            <fieldset>
-                <legend>Personal & Farm Details</legend>
-
-                <div class="form-group">
-                    <label for="username">Farmer Name:</label>
-                    <input type="text" id="username" name="username" placeholder="Enter farmer name" autofocus>
-                    <span class="error-msg" id="usernameError"></span>
-                </div>
-
-                <div class="form-group">
-                    <label for="mobile">Mobile Number:</label>
-                    <input type="tel" id="mobile" name="mobile" placeholder="10-digit mobile number (e.g. 9876543210)">
-                    <span class="error-msg" id="mobileError"></span>
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Email Address:</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email (e.g. farmer@example.com)">
-                    <span class="error-msg" id="emailError"></span>
-                </div>
-
-                <div class="form-group">
-                    <label for="plotid">Plot ID:</label>
-                    <input type="text" id="plotid" name="plotid" placeholder="Enter your Plot ID (e.g. PLOT-101)">
-                    <span class="error-msg" id="plotidError"></span>
-                </div>
-
-                <div class="form-group">
-                    <label for="village">Village:</label>
-                    <input type="text" id="village" name="village" placeholder="Enter village name">
-                    <span class="error-msg" id="villageError"></span>
-                </div>
-
-                <div class="form-group">
-                    <label for="cropstage">Crop Stage:</label>
-                    <select id="cropstage" name="cropstage">
-                        <option value="">-- Select Crop Stage --</option>
-                        <option value="Sowing">Sowing / Germination</option>
-                        <option value="Vegetative">Vegetative Growth</option>
-                        <option value="Flowering">Flowering / Reproductive</option>
-                        <option value="Yield Formation">Yield Formation / Maturation</option>
-                        <option value="Harvesting">Harvesting Stage</option>
-                    </select>
-                    <span class="error-msg" id="cropstageError"></span>
-                </div>
-
-                <div class="form-group">
-                    <label for="soiltype">Soil Type:</label>
-                    <select id="soiltype" name="soiltype">
-                        <option value="">-- Select Soil Type --</option>
-                        <option value="Alluvial">Alluvial Soil</option>
-                        <option value="Black">Black Soil (Regur)</option>
-                        <option value="Red">Red & Yellow Soil</option>
-                        <option value="Laterite">Laterite Soil</option>
-                        <option value="Sandy">Sandy / Arid Soil</option>
-                        <option value="Clay">Clay Soil</option>
-                    </select>
-                    <span class="error-msg" id="soiltypeError"></span>
-                </div>
-
-                <div class="form-group">
-                    <label for="method">Irrigation Method:</label>
-                    <select id="method" name="method">
-                        <option value="">-- Select Irrigation Method --</option>
-                        <option value="Drip">Drip Irrigation</option>
-                        <option value="Sprinkler">Sprinkler Irrigation</option>
-                        <option value="Surface">Surface / Flood Irrigation</option>
-                        <option value="Sub-irrigation">Sub-irrigation</option>
-                    </select>
-                    <span class="error-msg" id="methodError"></span>
-                </div>
-
-                <div class="form-group">
-                    <label for="moisture">Soil Moisture (%):</label>
-                    <input type="number" id="moisture" name="moisture" min="0" max="100" placeholder="Enter soil moisture percentage (0-100)">
-                    <span class="error-msg" id="moistureError"></span>
-                </div>
-
-                <div class="form-group">
-                    <label for="date">Registration Date:</label>
-                    <input type="date" id="date" name="date">
-                    <span class="error-msg" id="dateError"></span>
-                </div>
-
-                <div class="form-group">
-                    <label for="photo">File Upload (Farm Photo):</label>
-                    <input type="file" id="photo" name="photo" accept="image/*">
-                    <span class="error-msg" id="photoError"></span>
-                </div>
-
-                <div style="margin-top: 15px;">
-                    <input type="submit" value="Submit Registration">
-                    <input type="reset" value="Reset Form">
-                </div>
-
-            </fieldset>
-        </form>
+  <!-- Top Utility Announcement Header (TenderLive Screenshot 2 Style) -->
+  <div class="top-utility-bar">
+    <div class="top-utility-container">
+      <div class="top-utility-text">
+        Welcome To SugarMart & SUGARCANE360 e-Procurement Portal &nbsp;|&nbsp; 📞 Toll Free: +91-8956132095 (9.30 AM to 05.30 PM, Mon-Fri)
+      </div>
+      <div class="top-utility-actions">
+        <a href="registration.html" class="top-btn">Sugar Factory Registration</a>
+        <a href="registration.html" class="top-btn top-btn-solid">Supplier / Farmer Registration</a>
+        <a href="login.html" class="top-btn">Login</a>
+      </div>
     </div>
-<!-- <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const form = document.getElementById('farmerForm');
-        const successBanner = document.getElementById('successBanner');
+  </div>
 
-        const usernameInput = document.getElementById('username');
-        const mobileInput = document.getElementById('mobile');
-        const emailInput = document.getElementById('email');
-        const plotidInput = document.getElementById('plotid');
-        const villageInput = document.getElementById('village');
-        const cropstageSelect = document.getElementById('cropstage');
-        const soiltypeSelect = document.getElementById('soiltype');
-        const methodSelect = document.getElementById('method');
-        const moistureInput = document.getElementById('moisture');
-        const dateInput = document.getElementById('date');
-        const photoInput = document.getElementById('photo');
+  <!-- Main Navigation Header Bar -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-link">
+        <span class="brand-box-logo">SUGARCANE360</span>
+      </a>
+      <button class="hamburger-btn" id="navToggleBtn" aria-label="Toggle Navigation">
+        ☰ MENU
+      </button>
+      <nav class="nav-links-menu" id="navLinksMenu">
+        <a href="index.html" class="nav-item-link">Home</a>
+        <a href="dashboard.html" class="nav-item-link">Dashboard</a>
+        <a href="plots.html" class="nav-item-link">My Plots</a>
+        <a href="advisory.html" class="nav-item-link">Advisory</a>
+        <a href="registration.html" class="nav-item-link active">Suppliers Registration</a>
+        <a href="login.html" class="nav-item-link">Login</a>
+      </nav>
+    </div>
+  </header>
 
-        function showError(inputElement, errorElementId, message) {
-            inputElement.classList.add('invalid');
-            const errorSpan = document.getElementById(errorElementId);
-            if (errorSpan) {
-                errorSpan.textContent = message;
-            }
-        }
+  <!-- Blue Header Banner (TenderLive Screenshot 2 Style) -->
+  <div class="page-blue-banner">
+    <div class="banner-container">
+      <h1>SUPPLIERS &amp; FARMERS REGISTRATION</h1>
+      <p>Single e-Procurement B2B Platform Exclusively for the Sugar Sector</p>
+    </div>
+  </div>
 
-        function clearFieldError(inputElement, errorElementId) {
-            inputElement.classList.remove('invalid');
-            const errorSpan = document.getElementById(errorElementId);
-            if (errorSpan) {
-                errorSpan.textContent = '';
-            }
-        }
+  <!-- Main Portal Content -->
+  <main class="main-content">
+    
+    <div class="portal-layout-grid">
 
-        function resetAllErrors() {
-            clearFieldError(usernameInput, 'usernameError');
-            clearFieldError(mobileInput, 'mobileError');
-            clearFieldError(emailInput, 'emailError');
-            clearFieldError(plotidInput, 'plotidError');
-            clearFieldError(villageInput, 'villageError');
-            clearFieldError(cropstageSelect, 'cropstageError');
-            clearFieldError(soiltypeSelect, 'soiltypeError');
-            clearFieldError(methodSelect, 'methodError');
-            clearFieldError(moistureInput, 'moistureError');
-            clearFieldError(dateInput, 'dateError');
-            clearFieldError(photoInput, 'photoError');
+      <!-- Left Sidebar Navigation Panel (Exact Screenshot 2 Style) -->
+      <aside class="portal-sidebar">
+        <div class="portal-sidebar-title">REGISTRATION MENU</div>
+        <a href="registration.html" class="sidebar-nav-btn active">Suppliers Registration</a>
+        <a href="registration.html" class="sidebar-nav-btn">Registration &amp; Renewal Fees</a>
+        <a href="dashboard.html" class="sidebar-nav-btn">Sugar Factories List</a>
+        <a href="login.html" class="sidebar-nav-btn">Supplier Portal Login</a>
+      </aside>
 
-            successBanner.style.display = 'none';
-            successBanner.textContent = '';
-        }
+      <!-- Right Main Content Area -->
+      <section>
 
-        // Live error clearing
-        usernameInput.addEventListener('input', function () { clearFieldError(usernameInput, 'usernameError'); });
-        mobileInput.addEventListener('input', function () { clearFieldError(mobileInput, 'mobileError'); });
-        emailInput.addEventListener('input', function () { clearFieldError(emailInput, 'emailError'); });
-        plotidInput.addEventListener('input', function () { clearFieldError(plotidInput, 'plotidError'); });
-        villageInput.addEventListener('input', function () { clearFieldError(villageInput, 'villageError'); });
-        cropstageSelect.addEventListener('change', function () { clearFieldError(cropstageSelect, 'cropstageError'); });
-        soiltypeSelect.addEventListener('change', function () { clearFieldError(soiltypeSelect, 'soiltypeError'); });
-        methodSelect.addEventListener('change', function () { clearFieldError(methodSelect, 'methodError'); });
-        moistureInput.addEventListener('input', function () { clearFieldError(moistureInput, 'moistureError'); });
-        dateInput.addEventListener('change', function () { clearFieldError(dateInput, 'dateError'); });
-        photoInput.addEventListener('change', function () { clearFieldError(photoInput, 'photoError'); });
+        <!-- Information Notice (Screenshot 2 text) -->
+        <div class="card">
+          <p style="font-size:1.05rem; line-height:1.6; color:#111111;">
+            <strong>SugarMart SUGARCANE360</strong> is the Single eProcurement B2B Platform exclusively for the Sugar Sector where Sugar Factories from Maharashtra and all over India are coming to process tenders and sugarcane telemetry online. This is a golden opportunity for Manufacturers, Suppliers, Importers, Traders, and Farmers to grow their business by registering as a Supplier/Farmer on this platform under Single Point Registration System.
+          </p>
+          <div style="background:#e6f0fa; border-left:5px solid #0056b3; padding:14px; margin:16px 0; font-weight:bold; color:#003366;">
+            Prerequisites documents for registration on website:
+            <ol style="margin-top:8px; margin-left:24px; font-weight:normal; color:#111;">
+              <li>1. 7/12 Land Extract or Incorporation Certificate</li>
+              <li>2. GST Certificate / Farmer Aadhaar Card</li>
+              <li>3. PAN Card</li>
+            </ol>
+          </div>
+        </div>
 
-        form.addEventListener('submit', function (event) {
-            event.preventDefault();
-            resetAllErrors();
+        <!-- Success Banner -->
+        <div id="registrationSuccessBanner" style="display: none;"></div>
 
-            let isValid = true;
-            let firstInvalidElement = null;
+        <!-- Form Card -->
+        <div class="card">
+          <h2 style="font-size:1.4rem; color:#003366; margin-bottom:16px; border-bottom:2px solid #0056b3; padding-bottom:8px;">
+            SUPPLIER &amp; FARMER REGISTRATION FORM
+          </h2>
 
-            // Form Validations
-            const nameValue = usernameInput.value.trim();
-            const nameRegex = /^[A-Za-z\s]+$/;
-            if (nameValue === '') {
-                showError(usernameInput, 'usernameError', 'Farmer Name is required.');
-                isValid = false;
-                if (!firstInvalidElement) firstInvalidElement = usernameInput;
-            } else if (!nameRegex.test(nameValue)) {
-                showError(usernameInput, 'usernameError', 'Farmer Name must contain alphabetic characters and spaces only.');
-                isValid = false;
-                if (!firstInvalidElement) firstInvalidElement = usernameInput;
-            }
+          <form id="farmerRegisterForm" action="/submit" method="post" enctype="multipart/form-data" novalidate>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;">
+              
+              <!-- Name -->
+              <div class="form-group">
+                <label for="username" class="form-label">Full Name / Enterprise Name *</label>
+                <input type="text" id="username" name="username" class="form-input" placeholder="e.g. Ramesh Patil" required>
+                <span class="error-msg" id="usernameError"></span>
+              </div>
 
-            const mobileValue = mobileInput.value.trim();
-            const mobileRegex = /^[6-9]\d{9}$/;
-            if (mobileValue === '') {
-                showError(mobileInput, 'mobileError', 'Mobile number is required.');
-                isValid = false;
-                if (!firstInvalidElement) firstInvalidElement = mobileInput;
-            } else if (!mobileRegex.test(mobileValue)) {
-                showError(mobileInput, 'mobileError', 'Please enter a valid 10-digit Indian mobile number.');
-                isValid = false;
-                if (!firstInvalidElement) firstInvalidElement = mobileInput;
-            }
+              <!-- Mobile -->
+              <div class="form-group">
+                <label for="mobile" class="form-label">Mobile Phone Number *</label>
+                <input type="tel" id="mobile" name="mobile" class="form-input" placeholder="10-digit mobile number" required>
+                <span class="error-msg" id="mobileError"></span>
+              </div>
 
-            const emailValue = emailInput.value.trim();
-            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-            if (emailValue === '') {
-                showError(emailInput, 'emailError', 'Email address is required.');
-                isValid = false;
-                if (!firstInvalidElement) firstInvalidElement = emailInput;
-            } else if (!emailRegex.test(emailValue)) {
-                showError(emailError, 'emailError', 'Please enter a valid email address.');
-                isValid = false;
-                if (!firstInvalidElement) firstInvalidElement = emailInput;
-            }
+              <!-- Email -->
+              <div class="form-group">
+                <label for="email" class="form-label">Email Address *</label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="e.g. ramesh@agri.in" required>
+                <span class="error-msg" id="emailError"></span>
+              </div>
 
-            const plotidValue = plotidInput.value.trim();
-            if (plotidValue === '') {
-                showError(plotidInput, 'plotidError', 'Plot ID is required.');
-                isValid = false;
-                if (!firstInvalidElement) firstInvalidElement = plotidInput;
-            }
+              <!-- Village -->
+              <div class="form-group">
+                <label for="village" class="form-label">Village / Location *</label>
+                <input type="text" id="village" name="village" class="form-input" placeholder="e.g. Shirol, Kolhapur" required>
+                <span class="error-msg" id="villageError"></span>
+              </div>
 
-            const villageValue = villageInput.value.trim();
-            if (villageValue === '') {
-                showError(villageInput, 'villageError', 'Village name is required.');
-                isValid = false;
-                if (!firstInvalidElement) firstInvalidElement = villageInput;
-            }
+              <!-- District -->
+              <div class="form-group">
+                <label for="district" class="form-label">District / Region</label>
+                <select id="district" name="district" class="form-select">
+                  <option value="Kolhapur" selected>Kolhapur, Maharashtra</option>
+                  <option value="Sangli">Sangli, Maharashtra</option>
+                  <option value="Satara">Satara, Maharashtra</option>
+                  <option value="Solapur">Solapur, Maharashtra</option>
+                  <option value="Pune">Pune, Maharashtra</option>
+                </select>
+              </div>
 
-            if (cropstageSelect.value === '') {
-                showError(cropstageSelect, 'cropstageError', 'Please select a Crop Stage.');
-                isValid = false;
-                if (!firstInvalidElement) firstInvalidElement = cropstageSelect;
-            }
+              <!-- Land Area -->
+              <div class="form-group">
+                <label for="landarea" class="form-label">Total Sugarcane Area (Acres) *</label>
+                <input type="number" step="0.1" min="0.1" max="100" id="landarea" name="landarea" class="form-input" placeholder="e.g. 9.3" required>
+                <span class="error-msg" id="landareaError"></span>
+              </div>
 
-            if (soiltypeSelect.value === '') {
-                showError(soiltypeSelect, 'soiltypeError', 'Please select a Soil Type.');
-                isValid = false;
-                if (!firstInvalidElement) firstInvalidElement = soiltypeSelect;
-            }
+              <!-- Variety -->
+              <div class="form-group">
+                <label for="variety" class="form-label">Sugarcane Variety</label>
+                <select id="variety" name="variety" class="form-select">
+                  <option value="Co 86032 (Nayana)">Co 86032 (Nayana)</option>
+                  <option value="Co 0238 (Karan 4)">Co 0238 (Karan 4)</option>
+                  <option value="CoM 0265">CoM 0265 (Phule 0265)</option>
+                </select>
+              </div>
 
-            if (methodSelect.value === '') {
-                showError(methodSelect, 'methodError', 'Please select an Irrigation Method.');
-                isValid = false;
-                if (!firstInvalidElement) firstInvalidElement = methodSelect;
-            }
+              <!-- Crop Stage -->
+              <div class="form-group">
+                <label for="cropstage" class="form-label">Current Crop Stage *</label>
+                <select id="cropstage" name="cropstage" class="form-select" required>
+                  <option value="">-- Select Stage --</option>
+                  <option value="Germination">Germination Phase</option>
+                  <option value="Tillering">Tillering Phase</option>
+                  <option value="Grand Growth" selected>Grand Growth Phase</option>
+                  <option value="Maturity">Maturity Phase</option>
+                </select>
+                <span class="error-msg" id="cropstageError"></span>
+              </div>
 
-            const moistureValue = moistureInput.value.trim();
-            let moistureNum = 0;
-            if (moistureValue === '') {
-                showError(moistureInput, 'moistureError', 'Soil moisture (%) is required.');
-                isValid = false;
-                if (!firstInvalidElement) firstInvalidElement = moistureInput;
-            } else {
-                moistureNum = Number(moistureValue);
-                if (isNaN(moistureNum) || moistureNum < 0 || moistureNum > 100) {
-                    showError(moistureInput, 'moistureError', 'Soil moisture must be between 0 and 100.');
-                    isValid = false;
-                    if (!firstInvalidElement) firstInvalidElement = moistureInput;
-                }
-            }
+              <!-- Soil Type -->
+              <div class="form-group">
+                <label for="soiltype" class="form-label">Soil Texture / Type *</label>
+                <select id="soiltype" name="soiltype" class="form-select" required>
+                  <option value="">-- Select Soil --</option>
+                  <option value="Sandy Loam">Sandy Loam Soil</option>
+                  <option value="Medium Black" selected>Medium Black Soil</option>
+                  <option value="Heavy Clay">Heavy Deep Black Clay</option>
+                </select>
+                <span class="error-msg" id="soiltypeError"></span>
+              </div>
 
-            const dateValue = dateInput.value.trim();
-            if (dateValue === '') {
-                showError(dateInput, 'dateError', 'Registration Date is required.');
-                isValid = false;
-                if (!firstInvalidElement) firstInvalidElement = dateInput;
-            }
+              <!-- Irrigation Method -->
+              <div class="form-group">
+                <label for="method" class="form-label">Primary Irrigation Method *</label>
+                <select id="method" name="method" class="form-select" required>
+                  <option value="Drip Irrigation" selected>Drip Irrigation</option>
+                  <option value="Surface / Furrow">Surface / Furrow Flood</option>
+                </select>
+                <span class="error-msg" id="methodError"></span>
+              </div>
 
-            if (photoInput.files.length === 0) {
-                showError(photoInput, 'photoError', 'Please upload a farm photo.');
-                isValid = false;
-                if (!firstInvalidElement) firstInvalidElement = photoInput;
-            }
+              <!-- Soil Moisture -->
+              <div class="form-group">
+                <label for="moisture" class="form-label">Current Soil Moisture (%) *</label>
+                <input type="number" min="0" max="100" id="moisture" name="moisture" class="form-input" value="42" required>
+                <span class="error-msg" id="moistureError"></span>
+              </div>
 
-            if (!isValid) {
-                firstInvalidElement.focus();
-            } else {
-                // TASK 1
-                let requiredSoilMoisture = 50;
-                let moistureDeficit = requiredSoilMoisture - moistureNum;
+              <!-- Password -->
+              <div class="form-group">
+                <label for="password" class="form-label">Create Portal Password</label>
+                <input type="password" id="password" name="password" class="form-input" placeholder="Create password">
+              </div>
 
-                let statusMessage = `Farmer: ${nameValue}\nPlot ID: ${plotidValue}\nMoisture Deficit: ${moistureDeficit}%`;
-                alert(statusMessage);
+            </div>
 
-                successBanner.innerHTML = `
-                    <strong>Task 1 Output:</strong><br>
-                    Farmer: ${nameValue} | Plot ID: ${plotidValue}<br>
-                    Current Moisture: ${moistureNum}% | Required: ${requiredSoilMoisture}% | Deficit: <strong>${moistureDeficit}%</strong>
-                `;
-                successBanner.style.display = 'block';
-                successBanner.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
+            <div style="margin-top:20px; text-align:right;">
+              <button type="reset" class="btn btn-secondary btn-lg">Reset</button>
+              <button type="submit" class="btn btn-primary btn-lg" style="margin-left:10px;">SUBMIT REGISTRATION</button>
+            </div>
 
-        form.addEventListener('reset', function () {
-            resetAllErrors();
-        });
-    }); -->
-</script>
+          </form>
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div style="max-width: 1240px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+      <div>
+        <strong>SUGARCANE360</strong> &bull; Single e-Procurement B2B Platform & Irrigation System
+      </div>
+      <div>
+        Case Study: <em>KJS-AGR-01 &bull; Kolhapur, Maharashtra</em>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/register.js"></script>
 </body>
 </html>

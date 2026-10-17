@@ -1,34 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Today's Weather Forecast</title>
-    <link rel="stylesheet" href="agro.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather &amp; Forecast — SUGARCANE360</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-    <nav class="nav-header">
-        <a href="registration.html" class="nav-link">Task 1: Registration</a>
-        <a href="advisory.html" class="nav-link">Task 2: Advisory</a>
-        <a href="irrigation-table.html" class="nav-link">Task 3: Data Table</a>
-        <a href="weather.html" class="nav-link active">Task 4: Weather</a>
-        <a href="plot-map.html" class="nav-link">Task 5: Plot Map</a>
-        <a href="farm-info.html" class="nav-link">Task 6: Farm Info</a>
-        <a href="gall.html" class="nav-link">Task 7: Gallery</a>
-        <a href="media.html" class="nav-link">Task 8: Media Center</a>
-    </nav>
 
-    <div class="container">
-        <section>
-            <h2>Today's Weather Forecast</h2>
-            <hr>
-            
-            <h3>Farm Location Map</h3>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.7927659956576!2d72.89735127602592!3d19.072846982131143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c627a20bcaa9%3A0xb2fd3bcfeac0052a!2sK.%20J.%20Somaiya%20College%20of%20Engineering!5e0!3m2!1sen!2sin!4v1785825208558!5m2!1sen!2sin" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-
-            <h3>Live Weather Overlay</h3>
-            <iframe src="https://embed.windy.com/embed2.html?21.997,79.001,5" width="100%" height="400" style="border:0;" allowfullscreen></iframe>
-        </section>
+  <!-- Top Utility Header -->
+  <div class="top-utility-bar">
+    <div class="top-utility-container">
+      <div class="top-utility-text">
+        Welcome To SugarMart & SUGARCANE360 e-Procurement Portal &nbsp;|&nbsp; 📞 Toll Free: +91-8956132095 (9.30 AM to 05.30 PM, Mon-Fri)
+      </div>
+      <div class="top-utility-actions">
+        <a href="registration.html" class="top-btn">Factory Registration</a>
+        <a href="registration.html" class="top-btn">Supplier Registration</a>
+        <a href="login.html" class="top-btn top-btn-solid">Login</a>
+      </div>
     </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-link">
+        <span class="brand-box-logo">SUGARCANE360</span>
+      </a>
+      <button class="hamburger-btn" id="navToggleBtn" aria-label="Toggle Navigation">
+        ☰ MENU
+      </button>
+      <nav class="nav-links-menu" id="navLinksMenu">
+        <a href="index.html" class="nav-item-link">Home</a>
+        <a href="dashboard.html" class="nav-item-link">Dashboard</a>
+        <a href="plots.html" class="nav-item-link">My Plots</a>
+        <a href="advisory.html" class="nav-item-link">Advisory</a>
+        <a href="weather.html" class="nav-item-link active">Weather</a>
+        <a href="sensors.html" class="nav-item-link">Sensors</a>
+        <a href="crop-health.html" class="nav-item-link">Crop Health</a>
+        <a href="fertigation.html" class="nav-item-link">Fertigation</a>
+        <a href="analytics.html" class="nav-item-link">Analytics</a>
+        <a href="pump.html" class="nav-item-link">Pump Control</a>
+        <a href="alerts.html" class="nav-item-link">Alerts <span class="alert-dot-badge">2</span></a>
+        <!-- <a href="assistant.html" class="nav-item-link">AI Helpdesk</a> -->
+        <a href="registration.html" class="nav-item-link">Registration</a>
+        <a href="login.html" class="nav-item-link" style="background:#d9534f; color:#fff;">Logout</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Blue Header Banner -->
+  <div class="page-blue-banner">
+    <div class="banner-container">
+      <h1>WEATHER INFORMATION &amp; 7-DAY FORECAST</h1>
+      <p>Agrometeorological Live Feeds for Kolhapur &amp; Automated Rainfall Scheduling</p>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    
+    <div class="portal-layout-grid">
+
+      <!-- Left Sidebar Navigation Panel -->
+      <aside class="portal-sidebar">
+        <div class="portal-sidebar-title">WEATHER MENU</div>
+        <a href="weather.html" class="sidebar-nav-btn active">7-Day Forecast &amp; Rain</a>
+        <a href="advisory.html" class="sidebar-nav-btn">Plot Irrigation Advisory</a>
+        <a href="sensors.html" class="sidebar-nav-btn">Soil Telemetry Sensors</a>
+        <a href="pump.html" class="sidebar-nav-btn">Pump Remote Controls</a>
+      </aside>
+
+      <!-- Right Content Area -->
+      <section>
+
+        <!-- Current Weather Snapshot -->
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:12px; margin-bottom:20px;">
+          <div class="card card-sm">
+            <div style="font-size:0.85rem; font-weight:bold; color:#003366; text-transform:uppercase;">Temperature</div>
+            <div class="status-stat-val">29°C</div>
+            <div class="status-stat-sub">High: 31°C &bull; Low: 22°C</div>
+          </div>
+
+          <div class="card card-sm">
+            <div style="font-size:0.85rem; font-weight:bold; color:#003366; text-transform:uppercase;">Rain Probability</div>
+            <div class="status-stat-val" style="color:#0056b3;">20%</div>
+            <div class="status-stat-sub">Expected Rain: 0.0 mm</div>
+          </div>
+
+          <div class="card card-sm">
+            <div style="font-size:0.85rem; font-weight:bold; color:#003366; text-transform:uppercase;">Humidity</div>
+            <div class="status-stat-val">68%</div>
+            <div class="status-stat-sub">Evaporation Rate Normal</div>
+          </div>
+
+          <div class="card card-sm">
+            <div style="font-size:0.85rem; font-weight:bold; color:#003366; text-transform:uppercase;">Wind Speed</div>
+            <div class="status-stat-val">12 km/h</div>
+            <div class="status-stat-sub">WSW Breeze</div>
+          </div>
+        </div>
+
+        <!-- Impact on Irrigation Card -->
+        <div class="card" style="border-left:5px solid #0056b3; margin-bottom:20px;">
+          <h2 style="font-size:1.3rem; color:#003366; margin-bottom:8px;">
+            HOW WEATHER DIRECTS IRRIGATION SCHEDULES (CASE STUDY KJS-AGR-01)
+          </h2>
+          <p style="font-size:0.95rem; color:#111111; line-height:1.5; margin-bottom:14px;">
+            In traditional farming, pumps are turned on based on habit even when rainfall is imminent, causing water waste, energy expense, and waterlogging. SUGARCANE360 prevents this by factoring incoming precipitation into its decision model:
+          </p>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:12px;">
+            <div style="background:#f8f9fa; padding:12px; border:1px solid #cccccc;">
+              <div style="font-weight:bold; color:#003366; font-size:0.95rem; margin-bottom:4px;">
+                Low Rain Probability (&lt;30%)
+              </div>
+              <div style="font-size:0.9rem; color:#333333;">
+                Scheduled irrigation proceeds normally based on soil moisture depletion.
+              </div>
+            </div>
+            <div style="background:#e6f0fa; padding:12px; border:1px solid #0056b3;">
+              <div style="font-weight:bold; color:#003366; font-size:0.95rem; margin-bottom:4px;">
+                Significant Rainfall (&gt;50% or &ge;10mm)
+              </div>
+              <div style="font-size:0.9rem; color:#333333;">
+                Pumping duration is automatically reduced or postponed to preserve groundwater.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7-Day Forecast Grid -->
+        <div class="card">
+          <div class="card-title-row">
+            <div>
+              <h2 style="font-size:1.3rem; color:#003366;">
+                7-DAY AGROMETEOROLOGICAL FORECAST (KOLHAPUR)
+              </h2>
+            </div>
+            <span class="badge badge-good">Station Active</span>
+          </div>
+
+          <div id="weatherForecastTable">
+            <!-- Rendered via js/weather.js -->
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div style="max-width:1240px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+      <div><strong>SUGARCANE360</strong> &bull; Single e-Procurement B2B Platform & Irrigation System</div>
+      <div>Case Study: <em>KJS-AGR-01 &bull; Kolhapur, Maharashtra</em></div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/weather.js"></script>
 </body>
 </html>
