@@ -53,7 +53,6 @@ This traditional approach leads to:
 | **10. Yield Analytics** | [`analytics.html`](analytics.html) | 58.4 MT/Acre yield prediction, 8%–12% delay-loss risk indicator, cumulative water conservation chart (22% saved), and historical yields. |
 | **11. Pump Scheduling** | [`pump.html`](pump.html) | Pump 01 &amp; Pump 02 operational status, runtime durations, water liters, and Kolhapur rural 3-phase power grid mapping. |
 | **12. Alerts Center** | [`alerts.html`](alerts.html) | Filterable agronomic alert feed (Soil Moisture Deficit, Rainfall, Advisory, Fertigation) with Read/Unread toggles and Mark All Read. |
-| **13. AI Assistant** | [`assistant.html`](assistant.html) | Multilingual agricultural copilot supporting English, Marathi, Hindi, and Kannada with 5 pre-built case study questions. |
 
 ---
 
